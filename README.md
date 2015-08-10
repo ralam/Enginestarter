@@ -5,7 +5,7 @@
 [heroku]: http://flux-capacitr.herokuapp.com
 
 ## Minimum Viable Product
-Pokestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
+Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
