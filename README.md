@@ -1,8 +1,8 @@
-# Pokestarter
+# Enginestarter
 
-[Heroku link][heroku]
+[Heroku link]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+
 
 ## Minimum Viable Product
 Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
