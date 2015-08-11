@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 
   def new
   end
@@ -11,9 +11,10 @@ class SessionController < ApplicationController
 
     if user.nil?
       flash.now[:errors] = ["Invalid email/password combination"]
-      render :new
+      redirect_to new_session_url
     else
-      redirect_to root_url
+      log_in!(user)
+      redirect_to "/"
     end
   end
 
