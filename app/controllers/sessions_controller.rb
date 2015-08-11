@@ -9,12 +9,12 @@ class SessionsController < ApplicationController
       params[:user][:password]
     )
 
-    if user.nil?
-      flash.now[:errors] = ["Invalid email/password combination"]
-      redirect_to new_session_url
-    else
+    if user
       log_in!(user)
       redirect_to "/"
+    else
+      flash.now[:errors] = ["Invalid username or password"]
+      render :new
     end
   end
 
