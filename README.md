@@ -60,4 +60,3 @@ the `projects` collection and fetch from the `category` routes.
 - [ ] Multiple sessions/session management
 - [ ] User avatars
 - [ ] Users can share projects via email or social media
-# Enginestarter

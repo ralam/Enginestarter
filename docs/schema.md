@@ -6,6 +6,8 @@ column name  | data type | details
 id           | integer   | not null, primary key
 title        | string    | not null
 body         | string    | not null
+goal         | integer   | not null
+end_date     | date      | not null
 owner_id     | integer   | not null, foreign key (references users)
 category_id  | string    | foreign key (references categories)
 
