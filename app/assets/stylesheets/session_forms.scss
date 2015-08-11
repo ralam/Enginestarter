@@ -1,0 +1,23 @@
+//Log in & new user form styles
+
+.form-inline.session div.form-group {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-inline.session div.form-group input.form-control {
+  width: 100%;
+}
+
+.form-inline.session button.btn-block {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+form.form-inline.session {
+  padding: 20px;
+  width: 20%;
+  margin: 0 auto;
+  border: 1px solid #eeeeee;
+}
