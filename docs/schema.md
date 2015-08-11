@@ -32,4 +32,4 @@ column name     | data type | details
 id              | integer   | not null, primary key
 email           | string    | not null, unique
 password_digest | string    | not null
-session_token   | string    | not null, unique
+session_token   | string    | not null

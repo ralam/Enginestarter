@@ -1,0 +1,15 @@
+<form class="sign-up" action="<% new_user_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<% form_authenticity_token %>">
+  <label>
+    Email:
+    <input type="text" name="user[email]">
+  </label>
+  <label>
+    Password:
+    <input type="password" name="user[password]">
+  </label>
+  <input type="submit" value="Create Account">
+</form>
