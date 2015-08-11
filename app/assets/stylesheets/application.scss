@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ a.navbar-brand {
+   font-size: 30px;
+   font-weight: 700;
+ }
+
+nav a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav li.session-link a {
+  color: #00a0ff;
+}
+
+.navbar-default {
+  background-color: #ffffff;
+}
