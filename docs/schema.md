@@ -7,9 +7,7 @@ id           | integer   | not null, primary key
 title        | string    | not null
 body         | string    | not null
 owner_id     | integer   | not null, foreign key (references users)
-supporter_id | string    | foreign key (references users)
 category_id  | string    | foreign key (references categories)
-reward_id    | integer   | not null, foreign key (references rewards)
 
 ## rewards
 column name  | data type | details
@@ -18,7 +16,13 @@ id           | integer   | not null, primary key
 reward_level | integer   | not null
 reward_info  | string    | not null
 project_id   | integer   | not null, foreign key (references projects)
+
+## rewardings
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
 supporter_id | integer   | not null, foreign key (references users)
+project_id   | integer   | not null, foreign key (references projects)
 
 ## categories
 column name  | data type | details

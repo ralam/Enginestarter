@@ -1,13 +1,11 @@
 # Enginestarter
 
-[Heroku link]
+[Heroku link][heroku]
 
-
+[heroku]: https://enginestarter.herokuapp.com/
 
 ## Minimum Viable Product
 Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
-
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create accounts
 - [ ] Create sessions (log in)

@@ -20,7 +20,7 @@
 
 
 [new-session]: ./wireframes/new_session_page.png
-[carousel-show]: ./wireframes/carousel.page.png
+[carousel-show]: ./wireframes/carousel_page.png
 [project-show]: ./wireframes/project_show_page.png
 [project-form]: ./wireframes/project_form_page.png
 [category-index]: ./wireframes/category_index_page.png
