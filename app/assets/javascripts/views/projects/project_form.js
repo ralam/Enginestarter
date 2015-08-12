@@ -27,7 +27,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     model.save(projectData, {
       success: function (project) {
         this.collection.add(project);
-        Backbone.history.navigate('', { trigger: true})
+        var projectId = project.attributes.id
+        Backbone.history.navigate('/projects/' + projectId, { trigger: true})
       }.bind(this),
       error: function (errors, errorText) {
         console.log(errorText);
