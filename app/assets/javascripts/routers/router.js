@@ -6,8 +6,13 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    '': 'index',
     'projects/new': "newProject",
     'projects/:id': 'showProject'
+  },
+
+  index: function () {
+
   },
 
   newProject: function () {

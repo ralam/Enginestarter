@@ -2,7 +2,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   template: JST['projects/form'],
 
   tagName: 'form',
-  className: 'new-project form-inline',
+  className: 'project-form form-inline',
 
   events: {
     'submit': 'submitForm'

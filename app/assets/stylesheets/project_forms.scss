@@ -1,0 +1,27 @@
+form.project-form {
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid #eeeeee;
+  padding: 10px;
+}
+
+div.form-group {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+form.project-form button {
+  width: 36%;
+  margin: 6%;
+  // float: left
+}
+
+div.buttons {
+  margin: 0 auto;
+  width: 84%
+}
+
+.form-inline div.form-group input.form-control {
+  width: 100%;
+}
