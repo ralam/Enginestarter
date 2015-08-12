@@ -5,15 +5,23 @@
       <div class="col-sm-6 image">
         <img src="http://placehold.it/150x150">
       </div>
+      <div class="clearfix visible-sm-block"></div>
       <div class="col-sm-6 description">
         <div class="row backers">
         </div>
         <div class="row days">
-          <%= days %>
+          <span class="main-figure"><%= days %></span><br>
+          days remaining
         </div>
         <div class="row pledges">
           Pledged of $<%= project.escape('goal')%> goal
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 description">
+        <%= project.escape('body') %>
       </div>
     </div>
   </div>

@@ -10,3 +10,13 @@ div .image {
 div .description {
   border: 1px solid #000000;
 }
+
+
+.row{
+    overflow: hidden;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
