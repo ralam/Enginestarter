@@ -5,5 +5,6 @@ json.extract!(
   :goal,
   :end_date,
   :owner_id,
-  :category_id
+  :category_id,
+  :id
 )
