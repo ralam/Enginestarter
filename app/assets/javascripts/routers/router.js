@@ -6,13 +6,23 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    'projects/new': "newProject",
     'projects/:id': 'showProject'
+  },
+
+  newProject: function () {
+    var project = new Enginestarter.Models.Project();
+    var formView = new Enginestarter.Views.ProjectForm({
+      collection: this.collection,
+      model: project
+    });
+
+    this._swapView(formView);
   },
 
   showProject: function (id) {
     var project = this.collection.getOrFetch(id);
-
-    var showView = new Enginestarter.Views.ShowProject({ model: project })
+    var showView = new Enginestarter.Views.ProjectShow({ model: project })
 
     this._swapView(showView);
   },
