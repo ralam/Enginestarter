@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :projects
+  has_many :rewardings
+  has_many :rewards through: :rewardings
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
