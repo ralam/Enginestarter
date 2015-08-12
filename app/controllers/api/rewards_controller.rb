@@ -25,8 +25,6 @@ class RewardsController < ApplicationController
   private
 
   def reward_params
-    params
-      .require(:reward)
-      .require(:reward_level, :reward_title, :reward_info, :project_id)
+    params.require(:reward).require(:level, :title, :info, :project_id)
   end
 end
