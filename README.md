@@ -7,8 +7,8 @@
 ## Minimum Viable Product
 Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Create projects
 - [ ] View projects
 - [ ] Support projects
