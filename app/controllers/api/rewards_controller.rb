@@ -1,7 +1,7 @@
-class RewardsController < ApplicationController
+class Api::RewardsController < ApplicationController
 
   def create
-    @reward = Model.new(model_params)
+    @reward = Reward.new(model_params)
     if @reward.save
       render :show
     else
@@ -10,7 +10,7 @@ class RewardsController < ApplicationController
   end
 
   def show
-    @reward = Model.find(params[:id])
+    @reward = Reward.find(params[:id])
     if @reward
       render :show
     else
