@@ -1,7 +1,11 @@
-<p><%= project.escape('title') %></p>
+<div class="row">
+  <div class="col-sm-12 title">
+    <%= project.escape('title') %>
+  </div>
+</div>
 <div class="row">
   <div class="col-sm-9 left">
-    <div class="row topline-info">
+    <div class="row header top-buffer">
       <div class="col-sm-6 image">
         <img src="http://placehold.it/150x150">
       </div>
@@ -20,8 +24,8 @@
     </div>
 
 
-    <div class="row top-buffer">
-      <div class="col-sm-12 description">
+    <div class="row top-buffer body">
+      <div class="col-sm-12">
         <%= project.escape('body') %>
       </div>
     </div>
