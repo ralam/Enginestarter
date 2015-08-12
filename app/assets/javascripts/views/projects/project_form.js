@@ -4,6 +4,10 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   tagName: 'form',
   className: 'new-project form-inline',
 
+  events: {
+    'click submit': 'submitForm'
+  },
+
   render: function () {
     this.$el.html(this.template({
       project: this.model,
@@ -11,5 +15,9 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     }));
 
     return this;
+  },
+
+  submitForm: function (event) {
+    event.preventDefault();
   }
 });
