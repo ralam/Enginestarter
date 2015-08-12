@@ -23,15 +23,12 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
     projectData.category_id = 1; //placeholder;
-    console.log(projectData);
-    // var model = new Enginestarter.Models.Project();
-    // model.save(projectData, {
-    //   success: function (project) {
-    //     this.collection.add(project) {
-    //       Backbone.history.navigate('/', { trigger: true})
-    //     }
-    //   }
-    // });
-
+    var model = new Enginestarter.Models.Project();
+    model.save(projectData, {
+      success: function (project) {
+        this.collection.add(project);
+        Backbone.history.navigate('/', { trigger: true})
+      }.bind(this)
+    });
   }
 });
