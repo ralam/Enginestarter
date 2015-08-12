@@ -1,4 +1,7 @@
 json.extract!(
   reward,
-  :reward_title
+  :title,
+  :info,
+  :level,
+  :project_id
 )
