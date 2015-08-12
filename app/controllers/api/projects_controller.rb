@@ -2,7 +2,9 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    duration = params[:duration].to_i
     @project.owner_id = current_user.id
+    @project.end_date = Time.now + duration.days
     if @project.save
       render :show
     else

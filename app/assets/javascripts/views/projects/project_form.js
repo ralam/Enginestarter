@@ -28,7 +28,10 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
       success: function (project) {
         this.collection.add(project);
         Backbone.history.navigate('/', { trigger: true})
-      }.bind(this)
+      }.bind(this),
+      error: function (errors, errorText) {
+        console.log(errorText);
+      }
     });
   }
 });
