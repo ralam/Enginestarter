@@ -9,6 +9,6 @@ class Project < ActiveRecord::Base
   )
 
   has_many :rewards
-  has_many :rewardings through: :rewards
+  has_many :rewardings, through: :rewards
 
 end

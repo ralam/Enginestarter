@@ -3,5 +3,6 @@ class Reward < ActiveRecord::Base
 
   belongs_to :project
   has_many :rewardings
-  belongs_to :user through: :rewardings
+  has_many :users, through: :rewardings
+
 end
