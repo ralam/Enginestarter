@@ -1,6 +1,6 @@
-Enginestarter.Collections.Rewards = Backbone.Model.extend({
+Enginestarter.Collections.Rewards = Backbone.Collection.extend({
   url: 'api/rewards',
-  model: Enginestarter.Models.Reward
+  model: Enginestarter.Models.Reward,
 
   getOrFetch: function (id) {
     var collection = this;
@@ -21,3 +21,5 @@ Enginestarter.Collections.Rewards = Backbone.Model.extend({
     return project;
   }
 });
+
+Enginestarter.Collections.rewards = new Enginestarter.Collections.Rewards();

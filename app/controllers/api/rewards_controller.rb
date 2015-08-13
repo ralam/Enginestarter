@@ -1,7 +1,7 @@
 class Api::RewardsController < ApplicationController
 
   def create
-    @reward = Reward.new(model_params)
+    @reward = Reward.new(reward_params)
     if @reward.save
       render :show
     else
@@ -25,6 +25,6 @@ class Api::RewardsController < ApplicationController
   private
 
   def reward_params
-    params.require(:reward).require(:level, :title, :info, :project_id)
+    params.require(:reward).permit(:level, :title, :info, :project_id)
   end
 end
