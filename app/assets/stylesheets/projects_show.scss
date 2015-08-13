@@ -1,0 +1,41 @@
+div.left {
+  padding-left: 10%;
+  border: 1px solid #aaaaaa;
+}
+
+div .header, div .body {
+  border: 1px solid #aaaaaa;
+}
+
+div .image {
+  border-right: 1px solid #aaaaaa;
+}
+
+.row{
+    overflow: hidden;
+}
+
+div.image, div.description {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.top-buffer {
+  margin-top:20px;
+}
+
+ .title {
+   text-align: center;
+ }
+
+//RIGHT PANE:
+//
+div.right {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+div.reward-box {
+  border: 1px solid #aaaaaa;
+  padding: 5%;
+}
