@@ -1,24 +1,31 @@
 <div class="row">
   <div class="col-sm-12 title">
-    <%= project.escape('title') %>
+    <h1><%= project.escape('title') %></h1>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-9 left">
     <div class="row header top-buffer">
       <div class="col-sm-6 image">
-        <img src="http://placehold.it/150x150">
+        <div class="col-sm-12 desc-content">
+          <img src="http://placehold.it/150x150">
+        </div>
       </div>
       <div class="clearfix visible-sm-block"></div>
       <div class="col-sm-6 description">
-        <div class="row backers">
-        </div>
-        <div class="row days">
-          <span class="main-figure"><%= days %></span><br>
-          days remaining
-        </div>
-        <div class="row pledges">
-          Pledged of $<%= project.escape('goal')%> goal
+        <div class="col-sm-12 desc-content">
+          <div class="row backers">
+            <span class="main-figure">341</span><br>
+            Backers
+          </div>
+          <div class="row pledges">
+            <span class="main-figure">$1,241</span><br>
+            Pledged of $<%= project.escape('goal')%> goal
+          </div>
+          <div class="row days">
+            <span class="main-figure"><%= days %></span><br>
+            days remaining
+          </div>
         </div>
       </div>
     </div>
@@ -33,15 +40,5 @@
 
 
   <div class="col-sm-3 right" id="rewards">
-    <div class="row">
-      <!-- <div class="col-sm-12 reward-box top-buffer">
-        Placeholder text
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 reward-box top-buffer">
-        Placeholder text
-      </div> -->
-    </div>
   </div>
 <div>

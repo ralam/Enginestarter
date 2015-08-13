@@ -1,6 +1,13 @@
+//HEADER
+
+div.title {
+  
+}
+
+//LEFT PANE
+
 div.left {
   padding-left: 10%;
-  border: 1px solid #aaaaaa;
 }
 
 div .header, div .body {
@@ -27,6 +34,17 @@ div.image, div.description, div.right, div.left {
  .title {
    text-align: center;
  }
+
+//PROJECT HEADER:
+
+div.desc-content {
+  padding: 5%;
+}
+
+span.main-figure {
+  font-weight: 700;
+  font-size: 30pt;
+}
 
 //RIGHT PANE:
 //
