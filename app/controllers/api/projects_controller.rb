@@ -9,6 +9,7 @@ class Api::ProjectsController < ApplicationController
     params[:rewards].each do |reward|
       rewards.push(Reward.new(reward.permit(:level, :title, :info)))
     end
+    fail
     begin
       Project.transaction do
         @project.save!

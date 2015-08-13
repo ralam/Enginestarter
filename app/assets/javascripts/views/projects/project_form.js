@@ -27,6 +27,9 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     event.preventDefault();
     var $button = $(event.currentTarget);
     var $rewardItem = $('div.reward-item').clone();
+    $rewardItem.find('input').each( function () {
+      $(this).val('');
+    });
     $button.before($rewardItem);
   },
 
