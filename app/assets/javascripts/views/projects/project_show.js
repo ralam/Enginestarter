@@ -1,10 +1,17 @@
-Enginestarter.Views.ProjectShow = Backbone.View.extend({
+Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
   template: JST['projects/show'],
 
   className: '.container-fluid',
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
+  },
+
+  addReward: function () {
+    var view = new Enginestarter.Views.RewardShow({
+      model: reward;
+    });
+    this.addSubView('#rewards', view)
   },
 
   render: function () {
@@ -14,5 +21,5 @@ Enginestarter.Views.ProjectShow = Backbone.View.extend({
     this.$el.html(this.template({ project: this.model, days: daysLeft }));
 
     return this;
-  },
+  }
 })
