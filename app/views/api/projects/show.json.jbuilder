@@ -24,3 +24,5 @@ sum = 0
 end
 
 json.amount_pledged sum
+
+json.category @project.category.title

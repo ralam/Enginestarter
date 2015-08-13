@@ -71,7 +71,14 @@
     step="1">
 </div>
 <div class="form-group">
-  <p>Category Placeholder</p>
+  Category:
+  <select name="project[category_id]">
+    <% if (categories) {categories.each(function (category) { %>
+      <option value="<%= cateogry.escape('id') %>">
+        <%= cateogry.escape('title') %>
+      </option>
+    <% }); }%>
+  </select>
 </div>
 <button type="submit" class="btn btn-success btn-default form-footer">Submit</button>
 <button class="btn btn-danger btn-default form-footer">Cancel</button>

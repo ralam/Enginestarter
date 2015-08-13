@@ -7,6 +7,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   initialize: function (options) {
     this.rewards = options.rewards;
     this.rewardCounter = 1;
+    this.categories = options.categories;
+    this.listenTo(this.categories, 'sync', this.render);
   },
 
 
@@ -18,7 +20,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   render: function () {
     this.$el.html(this.template({
       project: this.model,
-      collection: this.collection
+      collection: this.collection,
+      categories: this.categories
     }));
 
     return this;
