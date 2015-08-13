@@ -1,3 +1,7 @@
+html,body
+{
+  height: 100%;
+}
 //LEFT PANE
 
 div.left {
@@ -8,21 +12,22 @@ div .header, div .body {
   border: 1px solid #aaaaaa;
 }
 
-div .image {
-  border-right: 1px solid #aaaaaa;
+div .description {
+  border-left: 1px solid #aaaaaa;
 }
 
 .row{
     overflow: hidden;
 }
 
-div.image, div.description, div.right, div.left {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
-}
+// div.image, div.right, div.left {
+//     margin-bottom: -100%;
+//     padding-bottom: 100%;
+// }
 
 .top-buffer {
   margin-top:20px;
+  height: auto
 }
 
  .title {
@@ -43,8 +48,8 @@ div.image, div.description, div.right, div.left {
  }
 
  img.project-image {
-   
-   margin: auto;
+   display: block;
+   margin: 0 auto;
  }
 
 //RIGHT PANE:
