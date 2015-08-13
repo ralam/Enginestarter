@@ -13,7 +13,9 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
+    var indexView = new Enginestarter.Views.ProjectIndex();
 
+    this._swapView(indexView);
   },
 
   newProject: function () {
