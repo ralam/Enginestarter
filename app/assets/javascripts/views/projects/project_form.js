@@ -28,7 +28,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     var projectData = formData.project;
     projectData.category_id = 1; //placeholder;
     var model = new Enginestarter.Models.Project();
-    model.save(projectData, {
+    model.save(formData, {
       success: function (project) {
         this.collection.add(project);
         var projectId = project.attributes.id
