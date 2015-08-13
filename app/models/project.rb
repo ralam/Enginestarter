@@ -10,5 +10,6 @@ class Project < ActiveRecord::Base
 
   has_many :rewards
   has_many :rewardings, through: :rewards
+  belongs_to :category
 
 end
