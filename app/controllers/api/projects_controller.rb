@@ -5,25 +5,17 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.owner_id = current_user.id
     @project.end_date = Time.now + duration.days
-
     @reward = Reward.new(params.require(:reward).permit(:level, :title, :info))
-
     begin
-      self.transaction do
+      Project.transaction do
         @project.save!
         @reward.project_id = @project.id
         @reward.save!
-        # FIGURE OUT TRANSACTION failure & double render
       end
       render :show
     rescue
-      # render json: @project.errors.full_messages + @reward.errors.full_messages, status: 422
-    end
-
-    if @project.save
-      render :show
-    else
-      render json: @project.errors.full_messages, status: 422
+      render json: @project.errors.full_messages + @reward.errors.full_messages, status: 422
+      return
     end
   end
 
