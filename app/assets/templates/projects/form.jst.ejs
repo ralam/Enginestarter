@@ -16,21 +16,31 @@
 <p>Image Upload Placeholder</p>
 </div>
 <div class="form-group">
+
+</div>
+<div class="input-group">
+  <span class="input-group-addon">$</span>
   <input
     type="number"
     name="project[goal]"
-    placeholder="Goal ($)"
-    class="form-control">
+    placeholder="Goal"
+    class="form-control"
+    min="1"
+    step="1">
+  <span class="input-group-addon">.00</span>
 </div>
-
 <div class="reward-item">
-  <div class="form-group">
-    <span class="reward-title">Reward #1</span>
+  <span class="reward-title">Reward #1</span>
+  <div class="input-group">
+    <span class="input-group-addon">$</span>
     <input
       type="number"
       name="rewards[][level]"
       placeholder="Reward level"
-      class="form-control">
+      class="form-control"
+      min="1"
+      step="1">
+    <span class="input-group-addon">.00</span>
   </div>
   <div class="form-group">
     <input
@@ -56,7 +66,9 @@
     type="number"
     name="duration"
     placeholder="Duration (in days)"
-    class="form-control">
+    class="form-control"
+    min="1"
+    step="1">
 </div>
 <div class="form-group">
   <p>Category Placeholder</p>
