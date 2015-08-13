@@ -13,11 +13,15 @@
       <div class="col-sm-6 description">
         <div class="col-sm-12 desc-content">
           <div class="row backers">
-            <span class="main-figure">341</span><br>
+            <span class="main-figure">
+              <%= project.escape('supporter_count') %>
+            </span><br>
             Backers
           </div>
           <div class="row pledges">
-            <span class="main-figure">$1,241</span><br>
+            <span class="main-figure">
+              $<%= project.escape('amount_pledged') %>
+            </span><br>
             Pledged of $<%= project.escape('goal')%> goal
           </div>
           <div class="row days">
