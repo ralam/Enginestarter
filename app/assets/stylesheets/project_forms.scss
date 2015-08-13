@@ -11,15 +11,24 @@ div.form-group {
   padding-bottom: 5px;
 }
 
-form.project-form button {
+form.project-form button.form-footer{
   width: 36%;
   margin: 6%;
-  // float: left
 }
 
-div.buttons {
-  margin: 0 auto;
-  width: 84%
+div.reward-item {
+  margin: 2%;
+  padding: 2%;
+  border: 1px solid #eeeeee;
+}
+
+span.reward-title {
+  padding-bottom: 5px;
+}
+
+button.add-reward {
+  margin-left: 4%;
+  margin-bottom: 10px;
 }
 
 .form-inline div.form-group input.form-control {
