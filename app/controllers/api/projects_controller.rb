@@ -5,12 +5,17 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.owner_id = current_user.id
     @project.end_date = Time.now + duration.days
-    @reward = Reward.new(params.require(:reward).permit(:level, :title, :info))
+    rewards = []
+    params[:rewards].each do |reward|
+      rewards.push(Reward.new(reward.permit(:level, :title, :info)))
+    end
     begin
       Project.transaction do
         @project.save!
-        @reward.project_id = @project.id
-        @reward.save!
+        rewards.each do |reward|
+          reward.project_id = @project.id
+          reward.save!
+        end
       end
       render :show
     rescue
