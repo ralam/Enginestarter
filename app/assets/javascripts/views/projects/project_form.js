@@ -6,6 +6,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.rewards = options.rewards;
+    this.rewardCounter = 1;
   },
 
 
@@ -26,10 +27,12 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   addRewardItem: function (event) {
     event.preventDefault();
     var $button = $(event.currentTarget);
-    var $rewardItem = $('div.reward-item').clone();
+    var $rewardItem = $('div.reward-item').last().clone();
     $rewardItem.find('input').each( function () {
       $(this).val('');
     });
+    this.rewardCounter += 1;
+    $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
     $button.before($rewardItem);
   },
 
