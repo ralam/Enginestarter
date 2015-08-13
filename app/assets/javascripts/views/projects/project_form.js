@@ -8,8 +8,10 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.rewards = options.rewards;
   },
 
+
   events: {
-    'submit': 'submitForm'
+    'submit': 'submitForm',
+    'click button.add-reward': 'addRewardItem'
   },
 
   render: function () {
@@ -19,6 +21,13 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     }));
 
     return this;
+  },
+
+  addRewardItem: function (event) {
+    event.preventDefault();
+    var $button = $(event.currentTarget);
+    var $rewardItem = $('div.reward-item').clone();
+    $button.before($rewardItem);
   },
 
   submitForm: function (event) {
