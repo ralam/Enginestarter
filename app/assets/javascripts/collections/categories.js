@@ -1,5 +1,5 @@
 Enginestarter.Collections.Categories = Backbone.Collection.extend({
-  url: 'api/collections'
+  url: 'api/categories'
 });
 
 

@@ -18,6 +18,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   },
 
   render: function () {
+
     this.$el.html(this.template({
       project: this.model,
       collection: this.collection,
@@ -44,7 +45,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
-    projectData.category_id = 1; //placeholder;
+    // projectData.category_id = 1; //placeholder;
     var model = new Enginestarter.Models.Project();
     model.save(formData, {
       success: function (project) {

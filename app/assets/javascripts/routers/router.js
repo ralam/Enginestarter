@@ -20,7 +20,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   newProject: function () {
-    // this.categories.fetch();
+    this.categories.fetch();
 
     var project = new Enginestarter.Models.Project();
     var formView = new Enginestarter.Views.ProjectForm({

@@ -73,9 +73,10 @@
 <div class="form-group">
   Category:
   <select name="project[category_id]">
+    <option disabled selected> Select a Category </option>
     <% if (categories) {categories.each(function (category) { %>
-      <option value="<%= cateogry.escape('id') %>">
-        <%= cateogry.escape('title') %>
+      <option value="<%= category.escape('id') %>">
+        <%= category.escape('title') %>
       </option>
     <% }); }%>
   </select>
