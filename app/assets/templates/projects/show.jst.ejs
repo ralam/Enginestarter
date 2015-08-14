@@ -29,6 +29,14 @@
             <span class="main-figure"><%= days %></span><br>
             days remaining
           </div>
+          <br>
+          <div class="row">
+            <% if (current_user) {%>
+              <% if (project.escape('owner_id') == current_user.id)  { %>
+                <a href="javascript:void(0)" id="editProject">(Edit)</a>
+              <% } %>
+            <% } %>
+          </div>
         </div>
       </div>
     </div>

@@ -18,7 +18,11 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
     var date = this.model.attributes.formatted_date
     var endDate = new Date(date);
     var daysLeft = Math.floor((endDate - Date.now()) / 86400000) + 1;
-    this.$el.html(this.template({ project: this.model, days: daysLeft }));
+    this.$el.html(this.template({
+      project: this.model,
+      days: daysLeft,
+      current_user: Enginestarter.CURRENT_USER
+    }));
     this.model.rewards().each(this.addReward.bind(this));
 
     return this;
