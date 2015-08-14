@@ -32,8 +32,9 @@
           <br>
           <div class="row">
             <% if (current_user) {%>
-              <% if (project.escape('owner_id') == current_user.id)  { %>
-                <a href="javascript:void(0)" id="editProject">(Edit)</a>
+              <% if (project.escape('owner_id') == current_user.id) { %>
+                <a href="<%="#projects/" + project.escape('id') + "/edit" %>"
+                    id="editProject">(Edit)</a>
               <% } %>
             <% } %>
           </div>
