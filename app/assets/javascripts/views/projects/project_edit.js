@@ -57,8 +57,6 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.addSubview('#rewards', view);
   },
 
-
-
   submitForm: function (event) {
     event.preventDefault();
 
@@ -67,8 +65,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     projectData.image_url = this.image_url;
 
     this.model.set(projectData)
-    
-    model.save(formData, {
+
+    this.model.save(formData, {
       success: function (project) {
         this.collection.add(project);
         var projectId = project.attributes.id

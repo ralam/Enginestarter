@@ -34,6 +34,12 @@ class Api::ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      render :show
+    else
+      render json: @project.errors.full_messages
+    end
   end
 
   def show
@@ -61,6 +67,7 @@ class Api::ProjectsController < ApplicationController
 
 
   def require_login_as_project_owner
+    @project = Project.find(params[:id])
     if current_user.id != @project.owner_id
       render json: ["Only the owner of a project can edit it."], status: 403
     end
