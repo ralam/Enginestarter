@@ -46,7 +46,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
       var data = result[0];
       this.image_url = data.url;
-      this.thumbUrl = data.thumbnail_url;
     }.bind(this));
   },
 
@@ -57,7 +56,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     var projectData = formData.project;
     var model = new Enginestarter.Models.Project();
     projectData.image_url = this.image_url;
-    projectData.thumb_url = this.thumb_url;
     model.save(formData, {
       success: function (project) {
         this.collection.add(project);
