@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :projects, except: [:new, :edit]
     resources :rewards, only: [:create, :show, :index]
     resources :categories, only: [:index]
-    resources :users, only: [:index ]
   end
 
 end

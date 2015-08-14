@@ -1,4 +1,6 @@
 class Api::ProjectsController < ApplicationController
+  before_action :require_login, only: [:create]
+  before_action :require_login_as_project_owner, only: [:update]
 
   def create
     duration = params[:duration].to_i
@@ -11,16 +13,22 @@ class Api::ProjectsController < ApplicationController
     end
 
     begin
+    errors = []
       Project.transaction do
         @project.save!
         rewards.each do |reward|
           reward.project_id = @project.id
-          reward.save! #is there a way to display errors of this?
+          begin
+            reward.save!
+          rescue
+            errors.push(reward.errors.full_messages + " ")
+          end
         end
       end
       render :show
     rescue
-      render json: @project.errors.full_messages, status: 422
+      errors.push(@project.errors.full_messages)
+      render json: errors.flatten, status: 422
       return
     end
   end
@@ -33,7 +41,7 @@ class Api::ProjectsController < ApplicationController
     if @project
       render :show
     else
-      flash[errors] = ["That project doesn't exist"]
+      flash[errors] = ["That project doesn't exist."]
       redirect_to '/'
     end
   end
@@ -41,7 +49,22 @@ class Api::ProjectsController < ApplicationController
   def destroy
   end
 
+  def require_login
+    if !current_user
+      render json: ["You must be logged in to create a project."], status: 401
+      return
+    end
+  end
+
+
   private
+
+
+  def require_login_as_project_owner
+    if current_user.id != @project.owner_id
+      render json: ["Only the owner of a project can edit it."], status: 403
+    end
+  end
 
   def project_params
     params
