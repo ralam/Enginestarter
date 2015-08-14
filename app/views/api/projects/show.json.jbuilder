@@ -6,7 +6,8 @@ json.extract!(
   :end_date,
   :owner_id,
   :category_id,
-  :id
+  :id,
+  :image_url
 )
 
 json.formatted_date("#{@project.end_date.to_s} GMT #{Time.now.strftime("%z")}")
