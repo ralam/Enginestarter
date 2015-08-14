@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  validates :title, :body, :goal, :end_date, :owner_id, presence: true
+  validates :title, :body, :goal, :end_date, :owner_id, :url, presence: true
 
   belongs_to(
     :user,

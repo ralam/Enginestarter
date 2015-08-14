@@ -14,7 +14,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
   events: {
     'submit': 'submitForm',
-    'click button.add-reward': 'addRewardItem'
+    'click button.add-reward': 'addRewardItem',
+    'click button.add-image': 'addImage'
   },
 
   render: function () {
@@ -40,13 +41,23 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     $button.before($rewardItem);
   },
 
+  addImage: function (event) {
+    event.preventDefault();
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+      var data = result[0];
+      this.url = data.url;
+      this.thumbUrl = data.thumbnail_url;
+    }.bind(this));
+  },
+
   submitForm: function (event) {
     event.preventDefault();
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
-    // projectData.category_id = 1; //placeholder;
     var model = new Enginestarter.Models.Project();
+    projectData.url = this.url;
+    projectData.thumb_url = this.thumb_url;
     model.save(formData, {
       success: function (project) {
         this.collection.add(project);

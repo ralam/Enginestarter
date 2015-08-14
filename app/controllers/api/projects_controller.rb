@@ -9,17 +9,18 @@ class Api::ProjectsController < ApplicationController
     params[:rewards].each do |reward|
       rewards.push(Reward.new(reward.permit(:level, :title, :info)))
     end
+
     begin
       Project.transaction do
         @project.save!
         rewards.each do |reward|
           reward.project_id = @project.id
-          reward.save!
+          reward.save! #is there a way to display errors of this?
         end
       end
       render :show
     rescue
-      render json: @project.errors.full_messages + @reward.errors.full_messages, status: 422
+      render json: @project.errors.full_messages, status: 422
       return
     end
   end
@@ -45,6 +46,7 @@ class Api::ProjectsController < ApplicationController
   def project_params
     params
       .require(:project)
-      .permit(:title, :body, :goal, :end_date, :owner_id, :category_id)
+      .permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :url,
+              :thumb_url)
   end
 end
