@@ -14,10 +14,14 @@
 </div>
 <div class="form-group">
   <label>Current Image:</label>
-
+  <img src="<%= project.escape('image_url') %>">
+  <br>
   <label>Change the Project Image:</label>
 
   <button class="btn btn-default add-image">Upload</button>
+</div>
+<div class="input-group" id="rewards">
+  <label>Current Rewards:</label>
 </div>
 <!-- <div class="input-group">
   <span class="input-group-addon">$</span>

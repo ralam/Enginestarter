@@ -1,4 +1,4 @@
-Enginestarter.Views.ProjectEditForm = Backbone.View.extend({
+Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   template: JST['projects/edit_form'],
 
   tagName: 'form',
@@ -12,6 +12,13 @@ Enginestarter.Views.ProjectEditForm = Backbone.View.extend({
     this.errors = [];
   },
 
+  addReward: function (reward) {
+    var view = new Enginestarter.Views.RewardShow({
+      model: reward
+    });
+    this.addSubview('#rewards', view);
+  },
+
   render: function () {
 
     this.$el.html(this.template({
@@ -19,6 +26,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.View.extend({
       collection: this.collection,
       errors: this.errors
     }));
+    this.model.rewards().each(this.addReward.bind(this));
 
     return this;
   },
