@@ -18,15 +18,15 @@ class Api::ProjectsController < ApplicationController
         @project.save!
         rewards.each do |reward|
           reward.project_id = @project.id
-          begin
-            reward.save!
-          rescue
-            errors.push(reward.errors.full_messages + " ")
-          end
+          @reward = reward
+          @reward.save!
         end
       end
       render :show
     rescue
+      if @reward
+        errors.push(@reward.errors.full_messages)
+      end
       errors.push(@project.errors.full_messages)
       render json: errors.flatten, status: 422
       return
