@@ -10,6 +10,7 @@ goal         | integer   | not null
 end_date     | date      | not null
 owner_id     | integer   | not null, foreign key (references users)
 category_id  | string    | foreign key (references categories)
+image_url    | string    | not null
 
 ## rewards
 column name  | data type | details
