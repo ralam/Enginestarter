@@ -1,0 +1,94 @@
+<h2>Edit This Project:</h2>
+
+<div class="form-group">
+  <label>Title: <%= project.escape('title') %></label>
+</div>
+<div class="form-group">
+  <label>Description:</label>
+  <div class="input-group">
+    <textarea
+      class="form-control"
+      rows="5" name="project[body]"
+      ><%= project.escape('body') %></textarea>
+  </div>
+</div>
+<div class="form-group">
+  <label>Current Image:</label>
+
+  <label>Change the Project Image:</label>
+
+  <button class="btn btn-default add-image">Upload</button>
+</div>
+<!-- <div class="input-group">
+  <span class="input-group-addon">$</span>
+  <input
+    type="number"
+    name="project[goal]"
+    placeholder="Goal"
+    class="form-control"
+    min="1"
+    step="1">
+  <span class="input-group-addon">.00</span>
+</div> -->
+<!-- <div class="reward-item">
+  <span class="reward-title">Reward #1</span>
+  <div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input
+      type="number"
+      name="rewards[][level]"
+      placeholder="Reward level"
+      class="form-control"
+      min="1"
+      step="1">
+    <span class="input-group-addon">.00</span>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      name="rewards[][title]"
+      placeholder="Reward title"
+      class="form-control">
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <textarea
+        class="form-control"
+        rows="3"
+        name="rewards[][info]"
+        placeholder="Enter a description for this reward"></textarea>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <button class="btn btn-primary add-reward">Add Another Reward</button>
+</div> -->
+
+<!-- <div class="form-group">
+  <input
+    type="number"
+    name="duration"
+    placeholder="Duration (in days)"
+    class="form-control"
+    min="1"
+    step="1">
+</div> -->
+<div class="form-group">
+  <label>Category: <%= project.escape('category') %></label>
+</div>
+
+<div class="form-group">
+  <% if (errors.length === 1) { %>
+    <label>Please fix the following errror before resubmitting the form:</label>
+  <% } else if (errors.length > 1) { %>
+    <label>Please fix the following errrors before resubmitting the form:</label>
+  <% } %>
+  <ul class="errors">
+    <% errors.forEach( function(error) {%>
+      <li><%= error %></li>
+    <%})%>
+  </ul>
+</div>
+
+<button type="submit" class="btn btn-success btn-default form-footer">Submit</button>
+<button class="btn btn-danger btn-default form-footer">Cancel</button>

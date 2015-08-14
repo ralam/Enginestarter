@@ -44,11 +44,10 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this.categories.fetch();
     var project = this.collection.getOrFetch(id);
 
-    var formView = new Enginestarter.Views.ProjectForm({
+    var formView = new Enginestarter.Views.ProjectEditForm({
       collection: this.collection,
       model: project,
-      rewards: this.rewards,
-      categories: this.categories
+      rewards: project.rewards()
     });
 
     this._swapView(formView);
