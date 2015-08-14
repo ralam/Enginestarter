@@ -33,7 +33,7 @@ class Api::ProjectsController < ApplicationController
     if @project
       render :show
     else
-      flash[errors] = ["That board doesn't exist"]
+      flash[errors] = ["That project doesn't exist"]
       redirect_to '/'
     end
   end

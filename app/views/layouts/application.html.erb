@@ -14,14 +14,15 @@
     };
     $(function () {
       <% if current_user %>
-        Enginestarter.CURRENT_USER = true;
+        // Enginestarter.CURRENT_USER = true;
+        Enginestarter.CURRENT_USER = {
+          id: <%= current_user.id %>
+        };
       <% else %>
         Enginestarter.CURRENT_USER = undefined;
       <% end %>
       Enginestarter.initialize();
     });
-
-
 
   </script>
 </head>

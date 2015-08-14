@@ -9,8 +9,8 @@ Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Create projects
-- [ ] View projects
+- [x] Create projects
+- [x] View projects
 - [ ] Support projects
 - [ ] Discover projects
 - [ ] Filter projects by category
@@ -39,7 +39,7 @@ phase, users will be able to create and view projects.
 I plan to use third-party libraries to add functionality to the `ProjectForm`
 and `ProjectShow` views in this phase. First I'll need to add a Markdown editor
 to the `ProjectForm`, and make sure that the Markdown is properly escaped and
-formatted in the `ProjectShow` view. I also plan to integrate Filepicker for
+formatted in the `ProjectShow` view. I also plan to integrate Cloudinary for
 file upload so users can add images to their projects.
 
 ### Phase 4: Supporting Projects and Project Updates (~2 days)
