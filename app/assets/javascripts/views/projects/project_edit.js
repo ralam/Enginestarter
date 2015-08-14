@@ -12,13 +12,6 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.errors = [];
   },
 
-  addReward: function (reward) {
-    var view = new Enginestarter.Views.RewardShow({
-      model: reward
-    });
-    this.addSubview('#rewards', view);
-  },
-
   render: function () {
 
     this.$el.html(this.template({
@@ -29,6 +22,63 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.model.rewards().each(this.addReward.bind(this));
 
     return this;
+  },
+
+  events: {
+    'submit': 'submitForm',
+    'click button.add-reward': 'addRewardItem',
+    'click button.add-image': 'addImage'
+  },
+
+  addRewardItem: function (event) {
+    event.preventDefault();
+    var $button = $(event.currentTarget);
+    var $rewardItem = $('div.reward-item').last().clone();
+    $rewardItem.find('input').each( function () {
+      $(this).val('');
+    });
+    this.rewardCounter += 1;
+    $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
+    $button.before($rewardItem);
+  },
+
+  addImage: function (event) {
+    event.preventDefault();
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+      var data = result[0];
+      this.image_url = data.url;
+    }.bind(this));
+  },
+
+  addReward: function (reward) {
+    var view = new Enginestarter.Views.RewardShow({
+      model: reward
+    });
+    this.addSubview('#rewards', view);
+  },
+
+
+
+  submitForm: function (event) {
+    event.preventDefault();
+
+    var formData = $(event.currentTarget).serializeJSON();
+    var projectData = formData.project;
+    projectData.image_url = this.image_url;
+
+    this.model.set(projectData)
+    
+    model.save(formData, {
+      success: function (project) {
+        this.collection.add(project);
+        var projectId = project.attributes.id
+        Backbone.history.navigate('/projects/' + projectId, { trigger: true})
+      }.bind(this),
+      error: function (errors, errorText) {
+        this.errors = errorText.responseJSON;
+        this.render();
+      }.bind(this)
+    });
   },
 
 });
