@@ -6,6 +6,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.rewards = options.rewards;
+    this.rewardCounter = this.rewards.length;
     this.category = options.category;
     this.listenTo(this.categories, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
@@ -16,8 +17,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
     this.$el.html(this.template({
       project: this.model,
-      collection: this.collection,
-      errors: this.errors
+      errors: this.errors,
+      counter: this.rewardCounter
     }));
     this.model.rewards().each(this.addReward.bind(this));
 
@@ -38,7 +39,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
       $(this).val('');
     });
     this.rewardCounter += 1;
-    $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
+    // $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
     $button.before($rewardItem);
   },
 

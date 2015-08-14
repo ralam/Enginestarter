@@ -23,19 +23,9 @@
 <div class="input-group" id="rewards">
   <label>Current Rewards:</label>
 </div>
-<!-- <div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input
-    type="number"
-    name="project[goal]"
-    placeholder="Goal"
-    class="form-control"
-    min="1"
-    step="1">
-  <span class="input-group-addon">.00</span>
-</div> -->
-<!-- <div class="reward-item">
-  <span class="reward-title">Reward #1</span>
+
+<div class="reward-item">
+  <span class="reward-title">New Reward #<%= counter %></span>
   <div class="input-group">
     <span class="input-group-addon">$</span>
     <input
@@ -66,7 +56,7 @@
 </div>
 <div class="form-group">
   <button class="btn btn-primary add-reward">Add Another Reward</button>
-</div> -->
+</div>
 
 <!-- <div class="form-group">
   <input
@@ -77,9 +67,6 @@
     min="1"
     step="1">
 </div> -->
-<div class="form-group">
-  <label>Category: <%= project.escape('category') %></label>
-</div>
 
 <div class="form-group">
   <% if (errors.length === 1) { %>
