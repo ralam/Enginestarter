@@ -12,14 +12,23 @@
       cloud_name: "<%=ENV['CLOUD_NAME']%>",
       upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
     };
+    $(function () {
+      <% if current_user %>
+        Enginestarter.CURRENT_USER = true;
+      <% else %>
+        Enginestarter.CURRENT_USER = undefined;
+      <% end %>
+      Enginestarter.initialize();
+    });
+
+
+
   </script>
 </head>
 <body>
   <%= render "layouts/navbar" %>
 
   <div class="content">
-
-
     <%= yield %>
   </div>
 </body>

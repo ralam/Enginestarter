@@ -13,7 +13,7 @@ window.Enginestarter = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Enginestarter.initialize();
-});
+// 
+// $(document).ready(function(){
+//   Enginestarter.initialize();
+// });

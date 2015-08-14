@@ -20,6 +20,12 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   newProject: function () {
+    if (Enginestarter.CURRENT_USER == undefined) {
+      Backbone.history.navigate('', { trigger: true });
+      window.alert('Please log in before creating a project');
+      return;
+    }
+
     this.categories.fetch();
 
     var project = new Enginestarter.Models.Project();
