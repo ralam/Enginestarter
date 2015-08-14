@@ -35,10 +35,29 @@ class Api::ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update(project_params)
+    rewards = []
+    params[:rewards].each do |reward|
+      rewards.push(Reward.new(reward.permit(:level, :title, :info)))
+    end
+
+    begin
+    errors = []
+      Project.transaction do
+        @project.save!
+        rewards.each do |reward|
+          reward.project_id = @project.id
+          @reward = reward
+          @reward.save!
+        end
+      end
       render :show
-    else
-      render json: @project.errors.full_messages
+    rescue
+      if @reward
+        errors.push(@reward.errors.full_messages)
+      end
+      errors.push(@project.errors.full_messages)
+      render json: errors.flatten, status: 422
+      return
     end
   end
 
