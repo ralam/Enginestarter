@@ -27,3 +27,7 @@ end
 json.amount_pledged sum
 
 json.category @project.category.title
+
+if current_user
+  json.current_user current_user.id
+end

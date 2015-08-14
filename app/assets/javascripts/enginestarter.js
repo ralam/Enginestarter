@@ -13,7 +13,18 @@ window.Enginestarter = {
     Backbone.history.start();
   }
 };
-// 
-// $(document).ready(function(){
-//   Enginestarter.initialize();
-// });
+
+$(document).ready(function(){
+  $.ajax({
+    url: "/api/users.json",
+    type: "GET",
+    success: function (userData) {
+      if (userData.id != 'null') {
+        Enginestarter.CURRENT_USER = { id: userData.id }
+      } else {
+        Enginestarter.CURRENT_USER = undefined;
+      }
+    }
+  });
+  Enginestarter.initialize();
+});

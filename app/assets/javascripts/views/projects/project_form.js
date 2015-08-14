@@ -9,6 +9,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.rewardCounter = 1;
     this.categories = options.categories;
     this.listenTo(this.categories, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.render);
   },
 
 
