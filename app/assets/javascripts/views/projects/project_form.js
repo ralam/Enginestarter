@@ -10,6 +10,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.categories = options.categories;
     this.listenTo(this.categories, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
+    this.errors = [];
   },
 
 
@@ -24,7 +25,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.$el.html(this.template({
       project: this.model,
       collection: this.collection,
-      categories: this.categories
+      categories: this.categories,
+      errors: this.errors
     }));
 
     return this;
@@ -64,8 +66,9 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
         Backbone.history.navigate('/projects/' + projectId, { trigger: true})
       }.bind(this),
       error: function (errors, errorText) {
-        console.log(errorText);
-      }
+        this.errors = errorText.responseJSON;
+        this.render();
+      }.bind(this)
     });
   },
 });
