@@ -10,6 +10,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   routes: {
     // '': 'index',
     'projects/new': "newProject",
+    'projects/:id/edit': 'editProject',
     'projects/:id': 'showProject'
   },
 
@@ -29,6 +30,20 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this.categories.fetch();
 
     var project = new Enginestarter.Models.Project();
+    var formView = new Enginestarter.Views.ProjectForm({
+      collection: this.collection,
+      model: project,
+      rewards: this.rewards,
+      categories: this.categories
+    });
+
+    this._swapView(formView);
+  },
+
+  editProject: function (id) {
+    this.categories.fetch();
+    var project = this.collection.getOrFetch(id);
+
     var formView = new Enginestarter.Views.ProjectForm({
       collection: this.collection,
       model: project,

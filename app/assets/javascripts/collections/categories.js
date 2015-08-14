@@ -1,5 +1,9 @@
 Enginestarter.Collections.Categories = Backbone.Collection.extend({
-  url: 'api/categories'
+  url: 'api/categories',
+
+  getOrFetch: function (id) {
+    
+  }
 });
 
 
