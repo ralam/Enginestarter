@@ -1,3 +1,4 @@
+<h2>Start a New Project:</h2>
 <div class="form-group">
   <input
     type="text"
@@ -6,11 +7,12 @@
     class="form-control">
 </div>
 <div class="form-group">
-  <input
-    type="textarea"
-    name="project[body]"
-    placeholder="Enter a description of your project"
-    class="form-control">
+  <div class="input-group">
+    <textarea
+      class="form-control"
+      rows="5" name="project[body]"
+      placeholder="Enter a description for your project"></textarea>
+  </div>
 </div>
 <div class="form-group">
   <label>Add a Project Image:</label>
@@ -51,11 +53,13 @@
       class="form-control">
   </div>
   <div class="form-group">
-    <input
-      type="text"
-      name="rewards[][info]"
-      placeholder="Reward info"
-      class="form-control">
+    <div class="input-group">
+      <textarea
+        class="form-control"
+        rows="3"
+        name="rewards[][info]"
+        placeholder="Enter a description for this reward"></textarea>
+    </div>
   </div>
 </div>
 <div class="form-group">
