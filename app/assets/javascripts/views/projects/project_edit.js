@@ -73,6 +73,11 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     window.history.back();
   },
 
+  renderPreview: function (event) {
+    var content = $(event.currentTarget).val();
+    this.$(".preview").html(marked(_.escape(content)));
+  },
+
   submitForm: function (event) {
     event.preventDefault();
 
