@@ -1,6 +1,10 @@
 Enginestarter.Collections.Projects = Backbone.Collection.extend({
   url: 'api/projects',
   model: Enginestarter.Models.Project,
+  
+  parse: function(data) {
+    return data.projects
+  },
 
   getOrFetch: function (id) {
     var collection = this;

@@ -15,8 +15,7 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template());
     if (this.collection.models.length > 0) {
-      var projects = this.collection.models[0].attributes.projects
-      projects.forEach(this.addProjectPreview.bind(this));
+      this.collection.models.forEach(this.addProjectPreview.bind(this));
     }
     return this;
   }
