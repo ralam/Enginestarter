@@ -8,6 +8,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.rewards = options.rewards;
     this.rewardCounter = this.rewards.length + 1;
     this.category = options.category;
+    this.image_url = this.model.attributes.image_url;
     this.listenTo(this.categories, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.errors = [];
@@ -19,7 +20,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.$el.html(this.template({
       project: this.model,
       errors: this.errors,
-      counter: this.rewardCounter
+      counter: this.rewardCounter,
+      image: this.image_url
     }));
     this.model.rewards().each(this.addReward.bind(this));
 
@@ -53,6 +55,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
       }
       var data = result[0];
       this.image_url = data.url;
+      this.render();
     }.bind(this));
   },
 
