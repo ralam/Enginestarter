@@ -29,7 +29,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   events: {
     'submit': 'submitForm',
     'click button.add-reward': 'addRewardItem',
-    'click button.add-image': 'addImage'
+    'click a.add-image': 'addImage'
   },
 
   addRewardItem: function (event) {

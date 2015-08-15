@@ -13,14 +13,12 @@
   </div>
 </div>
 <div class="form-group">
-  <label>Current Image:</label>
-  <img src="<%= project.escape('image_url') %>">
-  <br>
-  <label>Change the Project Image:</label>
-
-  <button class="btn btn-default add-image">Upload</button>
+  <label>
+    Current Image: <a href="javascript:void(0)" class="add-image">(change)</a>
+  </label><br>
+  <img src="<%= project.escape('image_url') %>" class="img-responsive form-image">
 </div>
-<div class="input-group" id="rewards">
+<div class="input-group container-fluid" id="rewards">
   <label>Current Rewards:</label>
 </div>
 
@@ -57,16 +55,6 @@
 <div class="form-group">
   <button class="btn btn-primary add-reward">Add Another Reward</button>
 </div>
-
-<!-- <div class="form-group">
-  <input
-    type="number"
-    name="duration"
-    placeholder="Duration (in days)"
-    class="form-control"
-    min="1"
-    step="1">
-</div> -->
 
 <div class="form-group">
   <% if (errors.length === 1) { %>
