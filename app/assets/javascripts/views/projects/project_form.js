@@ -18,7 +18,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     'submit': 'submitForm',
     'click button.add-reward': 'addRewardItem',
     'click button.add-image': 'addImage',
-    'click button#cancel': 'cancel'
+    'click button#cancel': 'cancel',
+    'keyup textarea': 'renderPreview'
   },
 
   render: function () {
@@ -31,6 +32,11 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     }));
 
     return this;
+  },
+
+  renderPreview: function (event) {
+    var content = $(event.currentTarget).val();
+    this.$(".preview").html(marked(_.escape(content)));
   },
 
   addRewardItem: function (event) {
