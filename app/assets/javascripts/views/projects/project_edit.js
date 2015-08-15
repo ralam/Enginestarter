@@ -47,6 +47,9 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   addImage: function (event) {
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result) {
+      if (error) {
+        return;
+      }
       var data = result[0];
       this.image_url = data.url;
     }.bind(this));
