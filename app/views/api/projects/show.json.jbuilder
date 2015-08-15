@@ -1,14 +1,16 @@
-json.extract!(
-  @project,
-  :title,
-  :body,
-  :goal,
-  :end_date,
-  :owner_id,
-  :category_id,
-  :id,
-  :image_url
-)
+# json.extract!(
+#   @project,
+#   :title,
+#   :body,
+#   :goal,
+#   :end_date,
+#   :owner_id,
+#   :category_id,
+#   :id,
+#   :image_url
+# )
+
+json.partial!('api/projects/projects', project: @project)
 
 json.formatted_date("#{@project.end_date.to_s} GMT #{Time.now.strftime("%z")}")
 
