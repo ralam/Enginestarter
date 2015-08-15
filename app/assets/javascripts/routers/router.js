@@ -8,14 +8,18 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    // '': 'index',
+    'projects': 'index',
     'projects/new': "newProject",
     'projects/:id/edit': 'editProject',
     'projects/:id': 'showProject'
   },
 
   index: function () {
-    var indexView = new Enginestarter.Views.ProjectIndex();
+    this.collection.fetch();
+
+    var indexView = new Enginestarter.Views.ProjectIndex({
+      collection: this.collection
+    });
 
     this._swapView(indexView);
   },
