@@ -21,7 +21,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
       project: this.model,
       errors: this.errors,
       counter: this.rewardCounter,
-      image: this.image_url
+      image: this.image_url || this.model.get("image_url")
     }));
     this.model.rewards().each(this.addReward.bind(this));
 
@@ -32,7 +32,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     'submit': 'submitForm',
     'click button.add-reward': 'addRewardItem',
     'click a.add-image': 'addImage',
-    'click button#cancel': 'cancel'
+    'click button#cancel': 'cancel',
+    'keyup textarea': 'renderPreview'
   },
 
   addRewardItem: function (event) {
