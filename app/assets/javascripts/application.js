@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
+//= require marked
 //= require enginestarter
 //= require_tree ../templates
 //= require_tree ./utils
