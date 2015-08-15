@@ -74,6 +74,11 @@ class Api::ProjectsController < ApplicationController
   def destroy
   end
 
+  def index
+    @projects = Project.all
+  end
+
+
   def require_login
     if !current_user
       render json: ["You must be logged in to create a project."], status: 401

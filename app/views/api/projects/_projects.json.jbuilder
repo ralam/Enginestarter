@@ -6,11 +6,6 @@ json.extract!(
   :end_date,
   :owner_id,
   :category_id,
-  :id
+  :id,
+  :image_url
 )
-
-json.rewards project.rewards do |reward|
-      json.partial!('api/rewards/rewards'), reward: reward
-    end
-  end
-end
