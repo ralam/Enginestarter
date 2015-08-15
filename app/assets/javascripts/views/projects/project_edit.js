@@ -29,7 +29,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   events: {
     'submit': 'submitForm',
     'click button.add-reward': 'addRewardItem',
-    'click a.add-image': 'addImage'
+    'click a.add-image': 'addImage',
+    'click button#cancel': 'cancel'
   },
 
   addRewardItem: function (event) {
@@ -60,6 +61,12 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
       model: reward
     });
     this.addSubview('#rewards', view);
+  },
+
+  cancel: function (event) {
+    event.preventDefault();
+    this.remove();
+    window.history.back();
   },
 
   submitForm: function (event) {
