@@ -5,5 +5,12 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
     this.$el.html(this.template());
     this.attachSubviews()
     return this;
+  },
+
+  addProjectPreview: function (project) {
+    var view = new Enginestarter.Views.ProjectPreview({
+      model: project
+    });
+    this.addSubview('#projects', view);
   }
 })
