@@ -14,6 +14,13 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
     this.addSubview('#rewards', view);
   },
 
+  renderRewards: function () {
+    this.model.rewards().models.sort(
+      function(a, b) {return a.attributes.level - b.attributes.level}
+    );
+    this.model.rewards().each(this.addReward.bind(this));
+  },
+
   render: function () {
     var date = this.model.attributes.formatted_date
     var endDate = new Date(date);
@@ -23,7 +30,7 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
       days: daysLeft,
       current_user: Enginestarter.CURRENT_USER
     }));
-    this.model.rewards().each(this.addReward.bind(this));
+    this.renderRewards();
 
     return this;
   }
