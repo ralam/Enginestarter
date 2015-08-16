@@ -33,14 +33,20 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     'click button.add-reward': 'addRewardItem',
     'click a.add-image': 'addImage',
     'click button#cancel': 'cancel',
-    'keyup .project-body': 'renderPreview'
+    'keyup .project-body': 'renderPreview',
+    'click .close-reward': 'closeRewardItem'
   },
 
   addRewardItem: function (event) {
     event.preventDefault();
     var $button = $(event.currentTarget);
     this.rewardCounter += 1;
-    $('div.reward-item').append(this.rewardTemplate({counter: this.rewardCounter}));
+    $('div.reward-items').append(this.rewardTemplate({counter: this.rewardCounter}));
+  },
+
+  closeRewardItem: function (event) {
+    event.preventDefault();
+    event.currentTarget.parentElement.remove();
   },
 
   addImage: function (event) {

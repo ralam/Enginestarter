@@ -1,28 +1,31 @@
-<span class="reward-title">New Reward #<%= counter %></span>
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input
-    type="number"
-    name="rewards[][level]"
-    placeholder="Reward level"
-    class="form-control"
-    min="1"
-    step="1">
-  <span class="input-group-addon">.00</span>
-</div>
-<div class="form-group">
-  <input
-    type="text"
-    name="rewards[][title]"
-    placeholder="Reward title"
-    class="form-control">
-</div>
-<div class="form-group">
+<div class="reward-item">
+  <span class="reward-title">New Reward #<%= counter %></span>
+  <button class="close-reward">&times;</button>
   <div class="input-group">
-    <textarea
+    <span class="input-group-addon">$</span>
+    <input
+      type="number"
+      name="rewards[][level]"
+      placeholder="Reward level"
       class="form-control"
-      rows="3"
-      name="rewards[][info]"
-      placeholder="Enter a description for this reward"></textarea>
+      min="1"
+      step="1">
+    <span class="input-group-addon">.00</span>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      name="rewards[][title]"
+      placeholder="Reward title"
+      class="form-control">
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <textarea
+        class="form-control"
+        rows="3"
+        name="rewards[][info]"
+        placeholder="Enter a description for this reward"></textarea>
+    </div>
   </div>
 </div>
