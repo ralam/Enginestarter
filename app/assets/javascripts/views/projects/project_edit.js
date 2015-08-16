@@ -21,7 +21,6 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.$el.html(this.template({
       project: this.model,
       errors: this.errors,
-      // counter: this.rewardCounter,
       image: this.image_url || this.model.get("image_url")
     }));
     this.model.rewards().each(this.addReward.bind(this));
