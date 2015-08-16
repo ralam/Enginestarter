@@ -1,13 +1,19 @@
 Enginestarter.Views.RewardShow = Backbone.View.extend({
- template: JST['rewards/show'],
+  template: JST['rewards/show'],
 
- className: 'row',
+  className: 'row',
 
- render: function () {
-   this.$el.html(this.template({
-     reward: this.model
-   }));
+  events: {
+    "click .reward-box": 'supportProject'
+  },
 
-   return this;
- }
+  render: function () {
+    this.$el.html(this.template({ reward: this.model }));
+
+    return this;
+  },
+
+  supportProject: function (event) {
+    this.model.rewarding().save({reward_id: this.model.id });
+  },
 });
