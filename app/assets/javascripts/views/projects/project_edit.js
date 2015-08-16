@@ -70,8 +70,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
   cancel: function (event) {
     event.preventDefault();
-    this.remove();
-    window.history.back();
+    Backbone.history.navigate('projects/' + this.model.id, { trigger: true})
   },
 
   renderPreview: function (event) {

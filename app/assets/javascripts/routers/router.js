@@ -16,7 +16,6 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
 
   index: function () {
     this.collection.fetch();
-
     var indexView = new Enginestarter.Views.ProjectIndex({
       collection: this.collection
     });

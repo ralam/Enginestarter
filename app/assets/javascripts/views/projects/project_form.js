@@ -28,7 +28,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
     this.$el.html(this.template({
       project: this.model,
-      // collection: this.collection,
       categories: this.categories,
       errors: this.errors
     }));
@@ -40,18 +39,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     var content = $(event.currentTarget).val();
     this.$(".preview").html(marked(_.escape(content)));
   },
-
-  // addRewardItem: function (event) {
-  //   event.preventDefault();
-  //   var $button = $(event.currentTarget);
-  //   var $rewardItem = $('div.reward-item').last().clone();
-  //   $rewardItem.find('input').each( function () {
-  //     $(this).val('');
-  //   });
-  //   this.rewardCounter += 1;
-  //   $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
-  //   $button.before($rewardItem);
-  // },
 
   addRewardItem: function (event) {
     event.preventDefault();
@@ -78,8 +65,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
   cancel: function (event) {
     event.preventDefault();
-    this.remove();
-    window.history.back();
+    Backbone.history.navigate('projects', { trigger: true})
   },
 
   submitForm: function (event) {
@@ -87,10 +73,8 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
-    // var model = new Enginestarter.Models.Project();
     projectData.image_url = this.image_url;
     this.model.set(projectData);
-    debugger;
     this.model.save(formData, {
       success: function (project) {
         this.collection.add(project);
