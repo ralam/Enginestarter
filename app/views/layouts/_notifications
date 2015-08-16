@@ -1,0 +1,3 @@
+<% if flash[:notifications] %>
+  <%= flash[:notifications].join("<br>").html_safe %>
+<% end %>
