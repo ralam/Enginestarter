@@ -19,7 +19,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     'click button.add-reward': 'addRewardItem',
     'click button.add-image': 'addImage',
     'click button#cancel': 'cancel',
-    'keyup textarea': 'renderPreview'
+    'keyup .project-body': 'renderPreview'
   },
 
   render: function () {

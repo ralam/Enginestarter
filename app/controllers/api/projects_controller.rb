@@ -43,11 +43,13 @@ class Api::ProjectsController < ApplicationController
     begin
     errors = []
       Project.transaction do
-        @project.save!
-        rewards.each do |reward|
-          reward.project_id = @project.id
-          @reward = reward
-          @reward.save!
+        @project.update(params.permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :image_url))
+        if rewards.length > 0
+          rewards.each do |reward|
+            reward.project_id = @project.id
+            @reward = reward
+            @reward.save!
+          end
         end
       end
       render :show
