@@ -36,15 +36,17 @@ class Api::ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     rewards = []
-    params[:rewards].each do |reward|
-      rewards.push(Reward.new(reward.permit(:level, :title, :info)))
+    if params[:rewards]
+      params[:rewards].each do |reward|
+        rewards.push(Reward.new(reward.permit(:level, :title, :info)))
+      end
     end
 
     begin
     errors = []
       Project.transaction do
-        @project.update(params.permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :image_url))
-        if rewards.length > 0
+        @project.update!(params.permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :image_url))
+        if rewards
           rewards.each do |reward|
             reward.project_id = @project.id
             @reward = reward

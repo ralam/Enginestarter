@@ -1,5 +1,6 @@
 Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   template: JST['projects/edit_form'],
+  rewardTemplate: JST['rewards/new'],
 
   tagName: 'form',
   className: 'project-form form-inline',
@@ -20,7 +21,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.$el.html(this.template({
       project: this.model,
       errors: this.errors,
-      counter: this.rewardCounter,
+      // counter: this.rewardCounter,
       image: this.image_url || this.model.get("image_url")
     }));
     this.model.rewards().each(this.addReward.bind(this));
@@ -39,13 +40,15 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   addRewardItem: function (event) {
     event.preventDefault();
     var $button = $(event.currentTarget);
-    var $rewardItem = $('div.reward-item').last().clone();
-    $rewardItem.find('input').each( function () {
-      $(this).val('');
-    });
+    // var $rewardItem = $('div.reward-item').last().clone();
+    // $rewardItem.find('input').each( function () {
+    //   $(this).val('');
+    // });
     this.rewardCounter += 1;
-    $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
-    $button.before($rewardItem);
+
+    // $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
+    $('div.reward-item').append(this.rewardTemplate({counter: this.rewardCounter}));
+    // $button.before($rewardItem);
   },
 
   addImage: function (event) {
