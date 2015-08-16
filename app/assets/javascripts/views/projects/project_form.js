@@ -1,5 +1,6 @@
 Enginestarter.Views.ProjectForm = Backbone.View.extend({
   template: JST['projects/form'],
+  rewardTemplate: JST['rewards/new'],
 
   tagName: 'form',
   className: 'project-form form-inline',
@@ -19,14 +20,15 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     'click button.add-reward': 'addRewardItem',
     'click button.add-image': 'addImage',
     'click button#cancel': 'cancel',
-    'keyup .project-body': 'renderPreview'
+    'keyup .project-body': 'renderPreview',
+    'click .close-reward': 'closeRewardItem'
   },
 
   render: function () {
 
     this.$el.html(this.template({
       project: this.model,
-      collection: this.collection,
+      // collection: this.collection,
       categories: this.categories,
       errors: this.errors
     }));
@@ -39,16 +41,28 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.$(".preview").html(marked(_.escape(content)));
   },
 
+  // addRewardItem: function (event) {
+  //   event.preventDefault();
+  //   var $button = $(event.currentTarget);
+  //   var $rewardItem = $('div.reward-item').last().clone();
+  //   $rewardItem.find('input').each( function () {
+  //     $(this).val('');
+  //   });
+  //   this.rewardCounter += 1;
+  //   $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
+  //   $button.before($rewardItem);
+  // },
+
   addRewardItem: function (event) {
     event.preventDefault();
     var $button = $(event.currentTarget);
-    var $rewardItem = $('div.reward-item').last().clone();
-    $rewardItem.find('input').each( function () {
-      $(this).val('');
-    });
     this.rewardCounter += 1;
-    $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
-    $button.before($rewardItem);
+    $('div.reward-items').append(this.rewardTemplate({counter: this.rewardCounter}));
+  },
+
+  closeRewardItem: function (event) {
+    event.preventDefault();
+    event.currentTarget.parentElement.remove();
   },
 
   addImage: function (event) {
@@ -73,9 +87,11 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
-    var model = new Enginestarter.Models.Project();
+    // var model = new Enginestarter.Models.Project();
     projectData.image_url = this.image_url;
-    model.save(formData, {
+    this.model.set(projectData);
+    debugger;
+    this.model.save(formData, {
       success: function (project) {
         this.collection.add(project);
         var projectId = project.attributes.id
