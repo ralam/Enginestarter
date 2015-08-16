@@ -3,6 +3,11 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   className: 'row',
 
+  initialize: function (options) {
+    this.parent = options.parent
+    // this.listenTo(this.model.rewardings(), 'change', this.parent.render);
+  },
+
   events: {
     "click .reward-box": 'supportProject'
   },
@@ -14,6 +19,13 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   },
 
   supportProject: function (event) {
-    this.model.rewardings().save({reward_id: this.model.id });
-  },
+    this.model.rewardings().save({reward_id: this.model.id }, {
+      success: function () {
+        var projectId = this.model.attributes.project_id
+        // Backbone.history.loadUrl(); //causes view to not work
+        // Backbone.history.navigate('projects/' + projectId, { trigger: true})
+        this.parent.render()
+      }.bind(this)
+    });
+  }
 });

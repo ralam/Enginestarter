@@ -5,6 +5,8 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
+    // this.listenTo(this.model.rewards().each(function(reward) {reward.rewardings()}), 'sync change add', this.render)
+    //figure out how to listen to subview's associations
   },
 
   render: function () {
@@ -17,13 +19,13 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
       current_user: Enginestarter.CURRENT_USER
     }));
     this.renderRewards();
-
     return this;
   },
 
   addReward: function (reward) {
     var view = new Enginestarter.Views.RewardShow({
-      model: reward
+      model: reward,
+      parent: this
     });
     this.addSubview('#rewards', view);
   },
