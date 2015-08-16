@@ -1,7 +1,6 @@
-class RewardingsController < ApplicationController
+class Api::RewardingsController < ApplicationController
   def create
     @rewarding = current_user.rewardings.new(rewarding_params)
-
     if @rewarding.save
       render json: @rewarding
     else

@@ -14,6 +14,6 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   },
 
   supportProject: function (event) {
-    this.model.rewarding().save({reward_id: this.model.id });
+    this.model.rewardings().save({reward_id: this.model.id });
   },
 });

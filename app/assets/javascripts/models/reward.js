@@ -3,7 +3,7 @@ Enginestarter.Models.Reward = Backbone.Model.extend({
 
   rewardings: function () {
     if (!this._rewardings) {
-      this._rewardings = new Enginestarter.Collections.Rewarding([], { project: this});
+      this._rewardings = new Enginestarter.Models.Rewarding([], { project: this});
     }
 
     return this._rewardings
