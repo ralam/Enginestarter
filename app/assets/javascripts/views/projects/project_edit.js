@@ -16,7 +16,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.rewardCounter = this.rewards.length + 1;
+    this.rewardCounter = this.rewards.length;
 
     this.$el.html(this.template({
       project: this.model,
@@ -34,21 +34,14 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     'click button.add-reward': 'addRewardItem',
     'click a.add-image': 'addImage',
     'click button#cancel': 'cancel',
-    'keyup textarea': 'renderPreview'
+    'keyup .project-body': 'renderPreview'
   },
 
   addRewardItem: function (event) {
     event.preventDefault();
     var $button = $(event.currentTarget);
-    // var $rewardItem = $('div.reward-item').last().clone();
-    // $rewardItem.find('input').each( function () {
-    //   $(this).val('');
-    // });
     this.rewardCounter += 1;
-
-    // $rewardItem.find('span.reward-title').html('Reward #' + this.rewardCounter);
     $('div.reward-item').append(this.rewardTemplate({counter: this.rewardCounter}));
-    // $button.before($rewardItem);
   },
 
   addImage: function (event) {
