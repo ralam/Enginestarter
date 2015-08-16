@@ -11,6 +11,10 @@ div.project-preview {
   min-width: 250px;
 }
 
+div.project-preview:hover {
+  background-color: rgba(78 ,212 , 78, 0.8)
+}
+
 span.link {
   position:absolute;
   width:100%;
