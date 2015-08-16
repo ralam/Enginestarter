@@ -3,5 +3,6 @@ json.extract!(
   :title,
   :info,
   :level,
-  :project_id
+  :project_id,
+  :id
 )
