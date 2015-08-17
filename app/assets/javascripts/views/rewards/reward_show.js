@@ -44,7 +44,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
       success: function (model, response, options) {
         var projectId = this.model.attributes.project_id
         this.model._rewarding = undefined;
-        Backbone.history.navigate('someDeadRoute');
+        Backbone.history.navigate('dummyRoute');
         Backbone.history.navigate('projects/' + projectId , {trigger: true});
         this.renderNotification(response);
       }.bind(this),
