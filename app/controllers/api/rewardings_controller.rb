@@ -31,7 +31,7 @@ class Api::RewardingsController < ApplicationController
 
     reward_id = rewarding_params[:reward_id]
     dup = Rewarding.where(user_id: current_user.id).where(reward_id: reward_id)
-    if dup
+    if (dup.first != nil)
       render json: ["You have already supported this project at this level. You may still pick another reward level."]
     end
   end
