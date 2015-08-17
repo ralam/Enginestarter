@@ -19,6 +19,9 @@
         <li><a href="/#projects/new">Start</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <!-- <li>
+          <%= render "layouts/notifications" %>
+        </li> -->
         <% if current_user %>
           <li class="session-link">
             <%= link_to "Sign Out", session_url, method: :delete %>

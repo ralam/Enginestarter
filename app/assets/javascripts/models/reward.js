@@ -1,12 +1,12 @@
 Enginestarter.Models.Reward = Backbone.Model.extend({
   urlRoot: 'api/rewards',
 
-  rewardings: function () {
-    if (!this._rewardings) {
-      this._rewardings = new Enginestarter.Models.Rewarding([], { project: this});
+  rewarding: function () {
+    if (!this._rewarding) {
+      this._rewarding = new Enginestarter.Models.Rewarding([], { project: this});
     }
 
-    return this._rewardings
+    return this._rewarding
   },
 
   parse: function (response) {
