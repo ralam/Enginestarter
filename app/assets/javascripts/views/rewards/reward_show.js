@@ -28,7 +28,8 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   },
 
   unhighlightReward: function (event) {
-
+    $rewardDiv = $(event.currentTarget);
+    $rewardDiv.children().last().remove();
   },
 
   supportProject: function (event) {
