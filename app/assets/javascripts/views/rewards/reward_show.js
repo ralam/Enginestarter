@@ -12,7 +12,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   },
 
   renderNotification: function (successNote) {
-    modal = new Enginestarter.Views.RewardNotification({
+    modal = new Enginestarter.Views.Notification({
       notification: successNote
     });
     $('body').append(modal.$el);
