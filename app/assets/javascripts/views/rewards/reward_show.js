@@ -2,6 +2,10 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   template: JST['rewards/show'],
   highlightTemplate: JST['rewards/highlight'],
 
+  initialize: function (options) {
+    this.daysLeft = options.daysLeft
+  },
+
   events: {
     'click .reward-box': 'supportProject',
     'mouseenter .reward-box': 'highlightReward',
@@ -10,7 +14,9 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ reward: this.model }));
-
+    if (this.daysLeft < 0) {
+      this.undelegateEvents();
+    };
     return this;
   },
 

@@ -10,10 +10,10 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
   render: function () {
     var date = this.model.attributes.formatted_date
     var endDate = new Date(date);
-    var daysLeft = Math.floor((endDate - Date.now()) / 86400000) + 1;
+    this.daysLeft = Math.floor((endDate - Date.now()) / 86400000) + 1;
     this.$el.html(this.template({
       project: this.model,
-      days: daysLeft,
+      days: this.daysLeft,
       current_user: Enginestarter.CURRENT_USER
     }));
     this.renderRewards();
@@ -23,7 +23,8 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
 
   addReward: function (reward) {
     var view = new Enginestarter.Views.RewardShow({
-      model: reward
+      model: reward,
+      daysLeft: this.daysLeft
     });
     this.addSubview('#rewards', view);
   },
