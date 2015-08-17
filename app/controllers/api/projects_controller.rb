@@ -82,6 +82,7 @@ class Api::ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  private
 
   def require_login
     if !current_user
@@ -89,10 +90,6 @@ class Api::ProjectsController < ApplicationController
       return
     end
   end
-
-
-  private
-
 
   def require_login_as_project_owner
     @project = Project.find(params[:id])

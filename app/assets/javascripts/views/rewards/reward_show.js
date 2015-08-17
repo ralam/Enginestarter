@@ -30,7 +30,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
       }.bind(this),
       error: function (errors, errorText) {
         this.renderNotification(errorText);
-      }
+      }.bind(this)
     });
   }
 });
