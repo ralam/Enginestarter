@@ -5,3 +5,7 @@ div.reward-box {
   border: 1px solid #aaaaaa;
   padding: 5%;
 }
+
+div.reward-box:hover {
+  cursor: pointer;
+}
