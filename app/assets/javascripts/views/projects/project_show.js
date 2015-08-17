@@ -1,7 +1,7 @@
 Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
   template: JST['projects/show'],
 
-  className: '.container-fluid',
+  className: 'container-fluid',
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render)
