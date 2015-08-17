@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
 
   def log_out!
     current_user.try(:reset_token!)
+    current_user = nil;
     self.session[:session_token] = nil
   end
 
