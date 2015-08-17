@@ -24,7 +24,8 @@ Enginestarter.Views.ProjectShow = Backbone.CompositeView.extend({
   addReward: function (reward) {
     var view = new Enginestarter.Views.RewardShow({
       model: reward,
-      daysLeft: this.daysLeft
+      daysLeft: this.daysLeft,
+      active: true
     });
     this.addSubview('#rewards', view);
   },
