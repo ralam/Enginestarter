@@ -12,15 +12,6 @@ class Api::RewardingsController < ApplicationController
     end
   end
 
-  def prevent_duplicate_rewarding
-
-    reward_id = rewarding_params[:reward_id]
-    dup = Rewarding.where(user_id: current_user.id).where(reward_id: reward_id)
-    if dup
-      render json: ["You have already supported this project at this level. You may still pick another reward level."]
-    end
-  end
-
   private
 
   def require_current_user_is_not_project_owner
@@ -36,7 +27,14 @@ class Api::RewardingsController < ApplicationController
     end
   end
 
+  def prevent_duplicate_rewarding
 
+    reward_id = rewarding_params[:reward_id]
+    dup = Rewarding.where(user_id: current_user.id).where(reward_id: reward_id)
+    if dup
+      render json: ["You have already supported this project at this level. You may still pick another reward level."]
+    end
+  end
 
   def rewarding_params
     params.require(:rewarding).permit(:reward_id)
