@@ -26,8 +26,12 @@
             Pledged of $<%= project.escape('goal')%> goal
           </div>
           <div class="row days">
-            <span class="main-figure"><%= days %></span><br>
-            days remaining
+            <% if ( days > 0 ) { %>
+              <span class="main-figure"><%= days %></span><br>
+              days remaining
+            <% } else { %>
+              <span class="closed-project">This project is closed</span><br>
+            <% } %>
           </div>
           <br>
           <div class="row">
