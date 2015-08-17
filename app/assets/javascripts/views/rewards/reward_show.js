@@ -1,8 +1,6 @@
 Enginestarter.Views.RewardShow = Backbone.View.extend({
   template: JST['rewards/show'],
 
-  className: 'row',
-
   events: {
     "click .reward-box": 'supportProject',
   },
@@ -13,8 +11,10 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
     return this;
   },
 
-  renderNotification: function () {
-    modal = new Enginestarter.Views.RewardNotification();
+  renderNotification: function (successNote) {
+    modal = new Enginestarter.Views.RewardNotification({
+      notification: successNote
+    });
     $('body').append(modal.$el);
     modal.render();
   },
@@ -26,7 +26,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
         this.model._rewarding = undefined;
         Backbone.history.navigate('someDeadRoute');
         Backbone.history.navigate('projects/' + projectId , {trigger: true});
-        this.renderNotification();
+        this.renderNotification(response);
       }.bind(this),
       error: function (errors, errorText) {
         console.log(errorText)
