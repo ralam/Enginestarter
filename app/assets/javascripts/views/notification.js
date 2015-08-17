@@ -1,5 +1,6 @@
 Enginestarter.Views.Notification = Backbone.View.extend({
   template: JST['notifications/modal'],
+  // className: 'm-container',
 
   initialize: function (options) {
     this.notification = options.notification;
@@ -12,7 +13,7 @@ Enginestarter.Views.Notification = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ notification: this.notification }));
-
+    $('html,body').scrollTop(0);
     return this;
   }
 })
