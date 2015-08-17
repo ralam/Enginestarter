@@ -1,5 +1,5 @@
 <h3><%= project.escape('title') %></h3>
-<div class="project-body"><%= project.escape('body') %></div>
+<div class="project-body"><%= marked(project.escape('body')) %></div>
 <a href="<%= '#projects/' + project.escape('id') %>">
   <span class="link"></span>
 </a>
