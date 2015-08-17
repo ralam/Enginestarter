@@ -67,11 +67,11 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    fail
     if @project
       render :show
     else
-      flash[errors] = ["That project doesn't exist."]
-      redirect_to '/'
+      render json: ["That project doesn't exist."]
     end
   end
 

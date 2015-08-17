@@ -11,11 +11,11 @@ class Api::RewardsController < ApplicationController
 
   def show
     @reward = Reward.find(params[:id])
+    fail
     if @reward
       render :show
     else
-      flash[errors] = ["That reward doesn't exist"]
-      redirect_to '/'
+      render json: ["That reward doesn't exist"]
     end
   end
 
