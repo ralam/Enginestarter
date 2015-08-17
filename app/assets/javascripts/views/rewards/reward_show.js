@@ -1,6 +1,6 @@
 Enginestarter.Views.RewardShow = Backbone.View.extend({
   template: JST['rewards/show'],
-  highlightTemplate: JST['reward/highlight'],
+  highlightTemplate: JST['rewards/highlight'],
 
   events: {
     'click .reward-box': 'supportProject',
@@ -23,12 +23,13 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
   },
 
   highlightReward: function (event) {
-    debugger;
+    $rewardDiv = $(event.currentTarget);
+    $rewardDiv.append(this.highlightTemplate())
   },
 
   unhighlightReward: function (event) {
 
-  }
+  },
 
   supportProject: function (event) {
     this.model.rewarding().save({reward_id: this.model.id }, {
