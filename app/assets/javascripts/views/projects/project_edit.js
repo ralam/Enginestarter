@@ -63,7 +63,8 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
   addReward: function (reward) {
     var view = new Enginestarter.Views.RewardShow({
-      model: reward
+      model: reward,
+      active: false
     });
     this.addSubview('#rewards', view);
   },

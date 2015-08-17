@@ -4,6 +4,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.daysLeft = options.daysLeft
+    this.active = options.active
   },
 
   events: {
@@ -14,7 +15,7 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template({ reward: this.model }));
-    if (this.daysLeft < 0) {
+    if (this.daysLeft < 0 || !this.active) {
       this.undelegateEvents();
     };
     return this;

@@ -6,7 +6,7 @@ class Api::RewardingsController < ApplicationController
   def create
     @rewarding = current_user.rewardings.new(rewarding_params)
     if @rewarding.save
-      render json: ["Thanks for backing this project with a pledge of $#{@rewarding.reward.level}"]
+      render json: ["Thanks for supporting this project with a pledge of $#{@rewarding.reward.level}"]
     else
       render json: @rewarding.errors.full_messages, status: 422
     end
@@ -17,13 +17,13 @@ class Api::RewardingsController < ApplicationController
   def require_current_user_is_not_project_owner
     reward_id = rewarding_params[:reward_id]
     if current_user.id == Reward.find(reward_id).project.user.id
-      render json: ["You cannot back your own project"]
+      render json: ["You cannot support your own project"]
     end
   end
 
   def require_login
     if !current_user
-      render json: ["Please log in before backing a project"]
+      render json: ["Please log in before supporting a project"]
     end
   end
 
