@@ -11,8 +11,8 @@ Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 - [x] Create sessions (log in)
 - [x] Create projects
 - [x] View projects
-- [ ] Support projects
-- [ ] Discover projects
+- [x] Support projects
+- [x] Discover projects
 - [ ] Filter projects by category
 
 ## Design Docs
@@ -50,7 +50,7 @@ projects or projects that reached their deadline. Projects should update their
 goal information appropriately as users support them.
 
 ### Phase 5: Project Categories (~2 days)
-I'll add `category` routes to the Projects controller and a `CategoryIndex`
+I'll add `category` route to the Projects controller and a `CategoryIndex`
 composite view and a `CategoryShow` view to the Backbone views. This will use
 the `projects` collection and fetch from the `category` routes.
 
