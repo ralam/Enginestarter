@@ -32,6 +32,11 @@ div.center {
   width: 80%;
 }
 
-span.project-body {
-  margin-bottom: 5px;
+div.project-body {
+  height: 80px;
+  width: 218px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
 }
