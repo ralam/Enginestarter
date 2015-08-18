@@ -1,3 +1,25 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-inline.session div.form-group {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-inline.session div.form-group input.form-control {
+  width: 100%;
+}
+
+.form-inline.session button.btn-block {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+form.form-inline.session {
+  padding: 20px;
+  width: 350px;
+  margin: 0 auto;
+  border: 1px solid #eeeeee;
+}

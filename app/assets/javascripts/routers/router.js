@@ -3,7 +3,6 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.collection = options.projects;
-    this.rewards = options.rewards;
     this.categories = options.categories;
   },
 
@@ -48,7 +47,6 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     var formView = new Enginestarter.Views.ProjectForm({
       collection: this.collection,
       model: project,
-      rewards: this.rewards,
       categories: this.categories
     });
 

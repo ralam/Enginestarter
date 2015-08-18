@@ -26,7 +26,7 @@ class Api::RewardsController < ApplicationController
   private
 
   def require_positive_level
-    if reward_params[:level] < 1
+    if reward_params[:level].to_i < 1
       render json: ["Please enter a reward level of at least $1."]
     end
   end

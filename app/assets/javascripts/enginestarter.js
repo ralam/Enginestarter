@@ -7,7 +7,6 @@ window.Enginestarter = {
     new Enginestarter.Routers.Router({
       $rootEl: $("div.content"),
       projects: Enginestarter.Collections.projects,
-      rewards: Enginestarter.Collections.rewards,
       categories: Enginestarter.Collections.categories
     });
     Backbone.history.start();

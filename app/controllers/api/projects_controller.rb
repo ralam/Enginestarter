@@ -78,13 +78,13 @@ class Api::ProjectsController < ApplicationController
   end
 
   def require_positive_goal
-    if project_params[:goal] < 1
+    if project_params[:goal].to_i < 1
       render json: ["Please enter a goal of at least $1."]
     end
   end
 
   def require_future_end_date
-    if params[:duration] < 1
+    if params[:duration].to_i < 1
       render json: ["Please enter a duration greater than zero days."]
     end
   end

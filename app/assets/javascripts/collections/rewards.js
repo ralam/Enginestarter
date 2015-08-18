@@ -21,5 +21,3 @@ Enginestarter.Collections.Rewards = Backbone.Collection.extend({
     return project;
   }
 });
-
-Enginestarter.Collections.rewards = new Enginestarter.Collections.Rewards();

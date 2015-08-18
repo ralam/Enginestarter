@@ -6,7 +6,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
   className: 'project-form form-inline',
 
   initialize: function (options) {
-    this.rewards = options.rewards;
     this.rewardCounter = 1;
     this.categories = options.categories;
     this.listenTo(this.categories, 'sync', this.render);
