@@ -1,6 +1,8 @@
 class Api::ProjectsController < ApplicationController
   before_action :require_login, only: [:create]
   before_action :require_login_as_project_owner, only: [:update]
+  before_action :require_positive_goal, only: [:create]
+  before_action :require_future_end_date, only: [:create]
 
   def create
     duration = params[:duration].to_i
@@ -72,6 +74,18 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if current_user.id != @project.owner_id
       render json: ["Only the owner of a project can edit it."], status: 403
+    end
+  end
+
+  def require_positive_goal
+    if project_params[:goal] < 1
+      render json: ["Please enter a goal of at least $1."]
+    end
+  end
+
+  def require_future_end_date
+    if params[:duration] < 1
+      render json: ["Please enter a duration greater than zero days."]
     end
   end
 
