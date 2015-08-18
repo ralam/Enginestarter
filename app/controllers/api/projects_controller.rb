@@ -8,28 +8,17 @@ class Api::ProjectsController < ApplicationController
     @project.owner_id = current_user.id
     @project.end_date = Time.now + duration.days
     rewards = []
-    params[:rewards].each do |reward|
-      rewards.push(Reward.new(reward.permit(:level, :title, :info)))
-    end
+    parse_rewards(params, rewards)
 
     begin
     errors = []
       Project.transaction do
         @project.save!
-        rewards.each do |reward|
-          reward.project_id = @project.id
-          @reward = reward
-          @reward.save!
-        end
+        save_rewards(rewards)
       end
       render :show
     rescue
-      if @reward
-        errors.push(@reward.errors.full_messages)
-      end
-      errors.push(@project.errors.full_messages)
-      render json: errors.flatten, status: 422
-      return
+      render_errors(errors)
     end
   end
 
@@ -37,9 +26,7 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     rewards = []
     if params[:rewards]
-      params[:rewards].each do |reward|
-        rewards.push(Reward.new(reward.permit(:level, :title, :info)))
-      end
+      parse_rewards(params, rewards)
     end
 
     begin
@@ -47,21 +34,12 @@ class Api::ProjectsController < ApplicationController
       Project.transaction do
         @project.update!(params.permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :image_url))
         if rewards
-          rewards.each do |reward|
-            reward.project_id = @project.id
-            @reward = reward
-            @reward.save!
-          end
+          save_rewards(rewards)
         end
       end
       render :show
     rescue
-      if @reward
-        errors.push(@reward.errors.full_messages)
-      end
-      errors.push(@project.errors.full_messages)
-      render json: errors.flatten, status: 422
-      return
+      render_errors(errors)
     end
   end
 
@@ -95,6 +73,29 @@ class Api::ProjectsController < ApplicationController
     if current_user.id != @project.owner_id
       render json: ["Only the owner of a project can edit it."], status: 403
     end
+  end
+
+  def parse_rewards(params, rewards)
+    params[:rewards].each do |reward|
+      rewards.push(Reward.new(reward.permit(:level, :title, :info)))
+    end
+  end
+
+  def save_rewards(rewards)
+    rewards.each do |reward|
+      reward.project_id = @project.id
+      @reward = reward
+      @reward.save!
+    end
+  end
+
+  def render_errors(errors)
+    if @reward
+      errors.push(@reward.errors.full_messages)
+    end
+    errors.push(@project.errors.full_messages)
+    render json: errors.flatten, status: 422
+    return
   end
 
   def project_params

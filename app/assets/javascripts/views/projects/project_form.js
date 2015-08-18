@@ -14,7 +14,6 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
     this.errors = [];
   },
 
-
   events: {
     'submit': 'submitForm',
     'click button.add-reward': 'addRewardItem',
