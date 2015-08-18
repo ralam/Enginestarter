@@ -9,7 +9,9 @@ div.project-preview {
   border: 1px solid #eeeeee;
   height: 150px;
   width: 250px;
-  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 div.project-preview:hover {
@@ -28,4 +30,8 @@ span.link {
 div.center {
   margin: 0 auto;
   width: 80%;
+}
+
+span.project-body {
+  margin-bottom: 5px;
 }

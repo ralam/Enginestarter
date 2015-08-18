@@ -67,7 +67,6 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    fail
     if @project
       render :show
     else
