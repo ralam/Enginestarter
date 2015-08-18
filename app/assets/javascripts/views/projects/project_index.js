@@ -1,8 +1,10 @@
 Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   template: JST['projects/index'],
 
-  initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render)
+  initialize: function (options) {
+    this.category = options.category;
+    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.category, 'sync', this.render);
   },
 
   addProjectPreview: function (project) {
@@ -14,8 +16,14 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template());
-    if (this.collection.models.length > 0) {
-      this.collection.models.forEach(this.addProjectPreview.bind(this));
+    if (this.category) {
+      var projects = this.collection.where({category_id: parseInt(this.category.id)})
+    } else {
+      var projects = this.collection.models;
+    }
+
+    if (projects.length > 0 ) {
+      projects.forEach(this.addProjectPreview.bind(this));
     }
     return this;
   }
