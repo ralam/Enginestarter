@@ -8,8 +8,8 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'categoryIndex',
-    'index': 'index',
+    'index': 'categoryIndex',
+    // 'index': 'index',
     'projects': 'projectIndex',
     'projects/category/:id': 'showCategory',
     'projects/new': "newProject",

@@ -73,8 +73,10 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
+
     projectData.image_url = this.image_url;
     this.model.set(projectData);
+    delete formData.project;
     this.model.save(formData, {
       success: function (project) {
         this.collection.add(project);
@@ -86,5 +88,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
         this.render();
       }.bind(this)
     });
+
+    delete this.model.attributes.rewards;
   },
 });

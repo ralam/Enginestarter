@@ -15,6 +15,15 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.errors = [];
   },
 
+  events: {
+    'submit': 'submitForm',
+    'click button.add-reward': 'addRewardItem',
+    'click a.add-image': 'addImage',
+    'click button#cancel': 'cancel',
+    'keyup .project-body': 'renderPreview',
+    'click .close-reward': 'closeRewardItem'
+  },
+
   render: function () {
     this.rewardCounter = this.rewards.length;
 
@@ -26,15 +35,6 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
     this.model.rewards().each(this.addReward.bind(this));
 
     return this;
-  },
-
-  events: {
-    'submit': 'submitForm',
-    'click button.add-reward': 'addRewardItem',
-    'click a.add-image': 'addImage',
-    'click button#cancel': 'cancel',
-    'keyup .project-body': 'renderPreview',
-    'click .close-reward': 'closeRewardItem'
   },
 
   addRewardItem: function (event) {
@@ -84,10 +84,9 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
     var formData = $(event.currentTarget).serializeJSON();
     var projectData = formData.project;
+
     projectData.image_url = this.image_url;
-
     this.model.set(projectData)
-
     this.model.save(formData, {
       success: function (project) {
         this.collection.add(project);
