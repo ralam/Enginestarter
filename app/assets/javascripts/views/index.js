@@ -6,12 +6,17 @@ Enginestarter.Views.Index = Backbone.View.extend({
   },
 
   render: function () {
+    var activeProject = [];
+    var lastProjects = [];
     if (this.collection) {
-      var projects = this.collection.first(4);
-    } else {
-      var projects = [];
+      activeProject = this.collection.first();
+      lastProjects = this.collection.last(3);
     }
-    this.$el.html(this.template({ projects: projects}));
+    // debugger;
+    this.$el.html(this.template({
+      activeProject: activeProject,
+      lastProjects: lastProjects
+    }));
 
     return this;
   }
