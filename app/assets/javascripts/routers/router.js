@@ -81,7 +81,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this.categories.fetch();
 
     var indexView = new Enginestarter.Views.CategoryIndex({
-      categories: this.categories
+      collection: this.categories
     })
 
     this._swapView(indexView);
