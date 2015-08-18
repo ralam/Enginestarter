@@ -8,15 +8,25 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    'categories': 'categoryIndex',
-    'projects': 'index',
+    // '': 'index',
+    '': 'categoryIndex',
+    'projects': 'projectIndex',
     'projects/category/:id': 'showCategory',
     'projects/new': "newProject",
     'projects/:id/edit': 'editProject',
     'projects/:id': 'showProject'
   },
 
-  index: function () {
+  // index: function () {
+  //   this.collection.fetch();
+  //   var indexView = new Enginestarter.Views.Index({
+  //     collection: this.collection.first(4)
+  //   });
+  //
+  //   this._swapView(indexView);
+  // },
+
+  projectIndex: function () {
     this.collection.fetch();
     var indexView = new Enginestarter.Views.ProjectIndex({
       collection: this.collection
