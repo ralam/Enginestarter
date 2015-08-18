@@ -9,6 +9,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
 
   routes: {
     'projects': 'index',
+    'projects/categories/:id': 'showCategory',
     'projects/new': "newProject",
     'projects/:id/edit': 'editProject',
     'projects/:id': 'showProject'
@@ -61,6 +62,18 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     var showView = new Enginestarter.Views.ProjectShow({ model: project })
 
     this._swapView(showView);
+  },
+
+  showCategory: function (id) {
+    this.projects.fetch();
+    var category = this.categories.getOrFetch(id)
+
+    var catView = new Enginestarter.Views.ProjectIndex({
+      cateogry: category,
+      collection: this.collection
+    });
+
+    this._swapView(catView);
   },
 
   _swapView: function (view) {
