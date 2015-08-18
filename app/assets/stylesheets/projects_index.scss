@@ -3,6 +3,11 @@
   padding-right: 5%;
 }
 
+#categories {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 div.project-preview {
   text-align: left;
   margin: 10px;
@@ -11,10 +16,17 @@ div.project-preview {
   width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
-
 }
 
-div.project-preview:hover {
+div.category {
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #eeeeee;
+  height: 100px;
+  width: 250px;
+}
+
+div.project-preview:hover, div.category:hover {
   background-color: rgba(78 ,212 , 78, 0.8)
 }
 

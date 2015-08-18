@@ -1,4 +1,4 @@
-Enginestarter.Categories.IndexView = Backbone.CompositeView.extend({
+Enginestarter.Views.CategoryIndex = Backbone.CompositeView.extend({
   template: JST['categories/index'],
 
   initialize: function () {
@@ -10,7 +10,7 @@ Enginestarter.Categories.IndexView = Backbone.CompositeView.extend({
       model: category
     });
     this.addSubview('#categories', view);
-  }
+  },
 
   render: function() {
     this.$el.html(this.template());
