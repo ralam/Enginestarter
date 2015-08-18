@@ -1,3 +1,3 @@
 json.array!(@categories) do |category|
-  json.extract!(category, :id, :title)
+  json.partial!('api/categories/categories', category: category)
 end

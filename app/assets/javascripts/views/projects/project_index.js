@@ -15,7 +15,7 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.$el.html(this.template());
+    this.$el.html(this.template({ category: this.category }));
     if (this.category) {
       var projects = this.collection.where({category_id: parseInt(this.category.id)})
     } else {

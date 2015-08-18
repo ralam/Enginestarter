@@ -8,7 +8,7 @@ Enginestarter.Collections.Categories = Backbone.Collection.extend({
     if (category) {
       category.fetch();
     } else {
-      category = new Enginestarter.Models.Project({ id: id });
+      category = new Enginestarter.Models.Category({ id: id });
       collection.add(category);
       category.fetch({
         error: function () {
