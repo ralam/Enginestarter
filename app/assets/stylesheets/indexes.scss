@@ -52,3 +52,26 @@ div.project-body {
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
 }
+
+img.carousel-image {
+  margin: 0 auto;
+  max-height: 300px;
+}
+
+div.item {
+  height: 500px;
+}
+
+div.carousel-body {
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+}
+
+div.carousel-project-body {
+  width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
