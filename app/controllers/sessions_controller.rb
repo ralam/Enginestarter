@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
 
     if user
       log_in!(user)
-      flash[:notifications] = ["Welcome, #{user.email}"]
-      redirect_to "/#projects"
+      redirect_to "/#index"
     else
       flash.now[:errors] = ["Invalid username or password"]
       render :new
@@ -21,7 +20,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out!
-    flash[:notifications] = ["You have successfully logged out"]
-    redirect_to "/#projects"
+    redirect_to "/#index"
   end
 end
