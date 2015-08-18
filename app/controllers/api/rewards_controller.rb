@@ -1,4 +1,5 @@
 class Api::RewardsController < ApplicationController
+  before_action :require_positive_level, only: [:create]
 
   def create
     @reward = Reward.new(reward_params)
@@ -23,6 +24,12 @@ class Api::RewardsController < ApplicationController
   end
 
   private
+
+  def require_positive_level
+    if reward_params[:level] < 1
+      render json: ["Please enter a reward level of at least $1."]
+    end
+  end
 
   def reward_params
     params.require(:reward).permit(:level, :title, :info, :project_id)
