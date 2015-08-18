@@ -20,7 +20,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   index: function () {
     this.collection.fetch();
     var indexView = new Enginestarter.Views.Index({
-      collection: this.collection.first(4)
+      collection: this.collection
     });
 
     this._swapView(indexView);
