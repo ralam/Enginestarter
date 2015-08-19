@@ -20,6 +20,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+        <li class="session-link">
+          <a href="<%= "/#users/#{current_user.id}" %>">Your Account</a>
+        </li>
           <li class="session-link">
             <%= link_to "Sign Out", session_url, method: :delete %>
           </li>
