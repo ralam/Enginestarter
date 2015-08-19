@@ -109,12 +109,10 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   showUser: function (id) {
-    this.collection.fetch();
     var user = this.users.getOrFetch(id);
 
     var userView = new Enginestarter.Views.UserShow({
-      model: user,
-      collection: this.collection
+      model: user
     });
 
     this._swapView(userView)
