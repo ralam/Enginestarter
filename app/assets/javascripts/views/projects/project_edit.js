@@ -6,8 +6,6 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   className: 'project-form form-inline',
 
   initialize: function (options) {
-    this.rewards = options.rewards;
-    this.rewardCounter = this.rewards.length + 1;
     this.category = options.category;
     this.image_url = this.model.attributes.image_url;
     this.listenTo(this.categories, 'sync', this.render);
@@ -25,14 +23,14 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.rewardCounter = this.rewards.length;
+    this.rewardCounter = this.model.rewards().length;
 
     this.$el.html(this.template({
       project: this.model,
       errors: this.errors,
       image: this.image_url || this.model.get("image_url")
     }));
-    this.model.rewards().each(this.addReward.bind(this));
+    this.renderRewards();
 
     return this;
   },
@@ -67,6 +65,13 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
       active: false
     });
     this.addSubview('#rewards', view);
+  },
+
+  renderRewards: function () {
+    this.model.rewards().models.sort(
+      function(a, b) {return a.attributes.level - b.attributes.level}
+    );
+    this.model.rewards().each(this.addReward.bind(this));
   },
 
   cancel: function (event) {
