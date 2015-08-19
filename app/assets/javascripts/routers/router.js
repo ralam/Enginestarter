@@ -4,6 +4,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.collection = options.projects;
     this.categories = options.categories;
+    this.users = options.users
   },
 
   routes: {
@@ -13,7 +14,8 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     'projects/new': "newProject",
     'projects/:id/edit': 'editProject',
     'projects/:id/rewards': 'projectRewardsList',
-    'projects/:id': 'showProject'
+    'projects/:id': 'showProject',
+    'users/:id': 'showUser'
   },
 
   index: function () {
@@ -104,6 +106,14 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(indexView);
+  },
+
+  userShow: function (id) {
+    var user = this.users.getOrFetch(id);
+
+    var userView = new Enginestarter.Views.UserShow({ model: user });
+
+    this._swapView(userView)
   },
 
   _swapView: function (view) {

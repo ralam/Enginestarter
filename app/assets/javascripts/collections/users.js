@@ -20,3 +20,5 @@ Enginestarter.Collections.Users = Backbone.Collection.extend({
     return user;
   }
 });
+
+Enginestarter.Collections.users = new Enginestarter.Collections.Users();
