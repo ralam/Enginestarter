@@ -12,6 +12,19 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
       user: this.model
     }));
 
+    this.renderProjects();
+
+    return this;
+  },
+
+  addProjectPreview: function (project) {
+    var view = new Enginestarter.Views.ProjectPreview({
+      model: project
+    });
+    this.addSubview('.projects', view);
+  },
+
+  renderProjects: function () {
     var project_ids = this.model.attributes.project_ids;
     var projects = [];
 
@@ -24,14 +37,5 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
     if (projects.length > 0) {
       projects.forEach(this.addProjectPreview.bind(this));
     }
-
-    return this;
-  },
-
-  addProjectPreview: function (project) {
-    var view = new Enginestarter.Views.ProjectPreview({
-      model: project
-    });
-    this.addSubview('.projects', view);
-  },
+  }
 })
