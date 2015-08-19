@@ -1,16 +1,3 @@
 <p><%= user.escape('email') %></p>
 <div class="projects">
-  <% if (projects) { %>
-    <% projects.forEach( function(project) { %>
-      <div class="project-preview title">
-      <h3><%= project.title %></h3>
-      <div class="project-body">
-        <span><%= marked(project.body) %></span>
-      </div>
-      <a href="<%= '#projects/' + project.id %>">
-        <span class="link"></span>
-      </a>
-    </div>
-    <% }) %>
-  <% } %>
 </div>

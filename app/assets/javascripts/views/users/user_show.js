@@ -4,22 +4,26 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.collection, 'sync', this.render)
   },
 
   render: function () {
     this.$el.html(this.template({
-      user: this.model,
-      projects: this.model.attributes.supported_projects
+      user: this.model
     }));
 
+    var project_ids = this.model.attributes.project_ids;
+    var projects = [];
 
+    if (project_ids) {
+      project_ids.forEach(function (id) {
+        projects.push(this.collection.getOrFetch(id));
+      }.bind(this));
+    }
 
-    // if (supported_projects && supported_projects.length > 0) {
-    //   supported_projects.forEach( function (project) {
-    //     projectItem = Enginestarter.Models.Project({project})
-    //     this.addProjectPreview(projectItem).bind(this)
-    //   }.bind(this));
-    // }
+    if (projects.length > 0) {
+      projects.forEach(this.addProjectPreview.bind(this));
+    }
 
     return this;
   },
