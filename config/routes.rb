@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :rewards, only: [:create, :show, :index]
     resources :categories, only: [:show, :index]
     resources :rewardings, only: [:create]
+    resources :users, only: [:show]
   end
 
 end
