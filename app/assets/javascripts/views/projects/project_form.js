@@ -47,6 +47,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
 
   closeRewardItem: function (event) {
     event.preventDefault();
+    this.rewardCounter -= 1;
     event.currentTarget.parentElement.remove();
   },
 
