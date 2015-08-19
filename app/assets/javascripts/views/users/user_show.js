@@ -10,14 +10,6 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
   render: function () {
     this.$el.html(this.template({ user: this.model }));
 
-    var projects = []
-
-    if (this.model.attributes.project_ids) {
-      this.model.attributes.project_ids.forEach(function (id){
-        projects.push(this.collection.where({ id: id }));
-      }.bind(this));
-    }
-
     return this;
   },
 
