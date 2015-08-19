@@ -14,7 +14,7 @@ div.project-preview {
   text-align: left;
   margin: 10px;
   border: 1px solid #eeeeee;
-  height: 150px;
+  height: 250px;
   width: 250px;
   padding: 10px;
   overflow: hidden;
@@ -56,8 +56,9 @@ div.project-body {
   width: 218px;
   overflow: hidden;
   text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 img.carousel-image {
