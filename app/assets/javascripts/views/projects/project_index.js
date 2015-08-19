@@ -11,7 +11,7 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
     var view = new Enginestarter.Views.ProjectPreview({
       model: project
     });
-    this.addSubview('#projects', view);
+    this.addSubview('.project-container', view);
   },
 
   render: function () {

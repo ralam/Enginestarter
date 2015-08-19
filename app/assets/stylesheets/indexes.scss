@@ -1,6 +1,7 @@
 #projects {
   padding-left: 5%;
   padding-right: 5%;
+
 }
 
 #categories {
@@ -14,8 +15,11 @@ div.project-preview {
   border: 1px solid #eeeeee;
   height: 150px;
   width: 250px;
+  padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-block;
+  position:relative;
 }
 
 div.category {
@@ -74,4 +78,8 @@ div.carousel-project-body {
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
+}
+
+.project-container {
+  text-align: center;
 }
