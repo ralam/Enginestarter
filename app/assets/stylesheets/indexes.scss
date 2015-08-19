@@ -59,6 +59,12 @@ div.project-body {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  margin-bottom: 15px;
+}
+
+div.progress, div.progress-bar {
+  height: 5px;
+  margin-bottom: 10px;
 }
 
 img.carousel-image {

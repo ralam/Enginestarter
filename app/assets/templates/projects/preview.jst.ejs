@@ -7,6 +7,20 @@
     <span class="sr-only">60% Complete</span>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-3 progress-info">
+    60%<br>
+    funded
+  </div>
+  <div class="col-sm-3 progress-info">
+    $<%= project.escape('amount_pledged') %><br>
+    raised
+  </div>
+  <div class="col-sm-6 progress-info">
+    3<br>
+    days to go
+  </div>
+</div>
 <a href="<%= '#projects/' + project.escape('id') %>">
   <span class="link"></span>
 </a>
