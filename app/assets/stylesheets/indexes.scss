@@ -1,12 +1,13 @@
 #projects {
   padding-left: 5%;
   padding-right: 5%;
-
+  text-align: center;
 }
 
 #categories {
   padding-left: 10%;
   padding-right: 10%;
+  text-align: center;
 }
 
 div.project-preview {
@@ -19,7 +20,7 @@ div.project-preview {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  position:relative;
+  position: relative;
 }
 
 div.category {
@@ -28,6 +29,8 @@ div.category {
   border: 1px solid #eeeeee;
   height: 100px;
   width: 250px;
+  display: inline-block;
+  position: relative;
 }
 
 div.project-preview:hover, div.category:hover {
@@ -78,8 +81,4 @@ div.carousel-project-body {
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
-}
-
-.project-container {
-  text-align: center;
 }
