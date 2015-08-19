@@ -59,6 +59,7 @@ Enginestarter.Views.ProjectForm = Backbone.View.extend({
       }
       var data = result[0];
       this.image_url = data.url;
+      $('.upload-preview').attr('src', data.url)
     }.bind(this));
   },
 
