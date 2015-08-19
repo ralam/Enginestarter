@@ -8,7 +8,6 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   },
 
   addProjectPreview: function (project) {
-    project.fetch();
     var view = new Enginestarter.Views.ProjectPreview({
       model: project
     });
