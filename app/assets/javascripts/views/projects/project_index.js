@@ -40,6 +40,6 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   switchCategory: function (event) {
     event.preventDefault();
     var id = $(event.currentTarget).val();
-    Backbone.history.navigate('/projects/category/' + id, { trigger: true }
+    Backbone.history.navigate('/projects/category/' + id, { trigger: true })
   }
 })
