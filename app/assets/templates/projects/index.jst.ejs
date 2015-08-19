@@ -9,9 +9,11 @@
 
       <br>
       <select>
-        <% categories.forEach(function (category) { %>
-          <option value="<%= category.escape('id') %>">
-            <%= category.escape('title') %>
+        <% categories.forEach(function (lcategory) { %>
+          <option
+            value="<%= lcategory.id %>"
+            <%= lcategory.id == category.id ? "selected" : "" %> >
+            <%= lcategory.escape('title') %>
           </option>
         <% }) %>
       </select>
