@@ -9,15 +9,15 @@
 </div>
 <div class="row">
   <div class="col-sm-3 progress-info">
-    <%= project.escape('funding_progress') %>%<br>
+    <span class="preview-fig"><%= project.escape('funding_progress') %></span>%<br>
     funded
   </div>
   <div class="col-sm-3 progress-info">
-    $<%= project.escape('amount_pledged') %><br>
+    <span class="preview-fig">$<%= project.escape('amount_pledged') %></span><br>
     raised
   </div>
   <div class="col-sm-6 progress-info">
-    <%= days %><br>
+    <span class="preview-fig"><%= days %></span><br>
     days to go
   </div>
 </div>
