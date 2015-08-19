@@ -12,6 +12,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     'projects/category/:id': 'showCategory',
     'projects/new': "newProject",
     'projects/:id/edit': 'editProject',
+    'projects/:id/rewards': 'projectRewardsList',
     'projects/:id': 'showProject'
   },
 
@@ -89,6 +90,16 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     var indexView = new Enginestarter.Views.CategoryIndex({
       collection: this.categories
     })
+
+    this._swapView(indexView);
+  },
+
+  projectRewardsList: function (id) {
+    var project = this.collection.getOrFetch(id);
+
+    var indexView = new EnginestarterViews.ProjectRewardList({
+      model: project
+    });
 
     this._swapView(indexView);
   },
