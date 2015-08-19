@@ -1,7 +1,7 @@
 Enginestarter.Collections.Users = Backbone.Collection.extend({
   url: 'api/users',
 
-  getOrFetch(id): function (id) {
+  getOrFetch: function (id) {
     var collection = this;
     var user = this.get(id)
 
