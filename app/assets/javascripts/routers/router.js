@@ -97,7 +97,7 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   projectRewardsList: function (id) {
     var project = this.collection.getOrFetch(id);
 
-    var indexView = new EnginestarterViews.ProjectRewardList({
+    var indexView = new Enginestarter.Views.ProjectRewardList({
       model: project
     });
 
