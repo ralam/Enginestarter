@@ -74,11 +74,13 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
 
   showCategory: function (id) {
     this.collection.fetch();
+    this.categories.fetch();
     var category = this.categories.getOrFetch(id)
 
     var catView = new Enginestarter.Views.ProjectIndex({
       category: category,
-      collection: this.collection
+      collection: this.collection,
+      categories: this.categories
     });
 
     this._swapView(catView);

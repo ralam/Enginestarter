@@ -2,8 +2,10 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   template: JST['projects/index'],
 
   initialize: function (options) {
+    this.categories = options.categories;
     this.category = options.category;
     this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.categories, 'sync', this.render);
     this.listenTo(this.category, 'sync', this.render);
   },
 
@@ -15,7 +17,10 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    this.$el.html(this.template({ category: this.category }));
+    this.$el.html(this.template({
+      categories: this.categories,
+      category: this.category
+    }));
     if (this.category) {
       var projects = this.collection.where({category_id: parseInt(this.category.id)})
     } else {

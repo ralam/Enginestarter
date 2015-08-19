@@ -6,6 +6,15 @@
       <% } else { %>
         <h1>All Projects in <%= category.escape('title') %>:</h1>
       <% } %>
+
+      <br>
+      <select>
+        <% categories.forEach(function (category) { %>
+          <option value="<%= category.escape('id') %>">
+            <%= category.escape('title') %>
+          </option>
+        <% }) %>
+      </select>
     </div>
   </div>
 </div>
