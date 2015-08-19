@@ -42,6 +42,27 @@
               <% } %>
             <% } %>
           </div>
+          <div class="row">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= project.escape('funding_progress') %>%;">
+                <span class="sr-only"><%= project.escape('funding_progress') %>% Complete</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3 progress-info">
+                <span class="preview-fig"><%= project.escape('funding_progress') %></span>%<br>
+                funded
+              </div>
+              <div class="col-sm-3 progress-info">
+                <span class="preview-fig">$<%= project.escape('amount_pledged') %></span><br>
+                raised
+              </div>
+              <div class="col-sm-6 progress-info">
+                <span class="preview-fig"><%= days %></span><br>
+                days to go
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
