@@ -1,8 +1,8 @@
 class Api::UsersController < ApplicationController
   def show
-    @user = Project.find(params[:id])
+    @user = User.find(params[:id])
     if @user
-      render :showView
+      render :show
     else
       render json: ["That user doesn't exist"]
     end
