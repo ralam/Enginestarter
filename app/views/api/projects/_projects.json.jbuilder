@@ -27,4 +27,6 @@ end
 
 json.amount_pledged sum
 
+json.funding_progress ((sum * 1.0 / project.goal) * 100).round
+
 json.category project.category.title
