@@ -9,11 +9,8 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
     this.listenTo(this.category, 'sync', this.render);
   },
 
-  addProjectPreview: function (project) {
-    var view = new Enginestarter.Views.ProjectPreview({
-      model: project
-    });
-    this.addSubview('#projects', view);
+  events: {
+    'change .categories': 'switchCategory'
   },
 
   render: function () {
@@ -31,5 +28,18 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
       projects.forEach(this.addProjectPreview.bind(this));
     }
     return this;
+  },
+
+  addProjectPreview: function (project) {
+    var view = new Enginestarter.Views.ProjectPreview({
+      model: project
+    });
+    this.addSubview('#projects', view);
+  },
+
+  switchCategory: function (event) {
+    event.preventDefault();
+    var id = $(event.currentTarget).val();
+    Backbone.history.navigate('/projects/category/' + id, { trigger: true })
   }
 })
