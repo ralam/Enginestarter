@@ -13,7 +13,7 @@ div .header, div .body {
 }
 
 div .header {
-  height: 400px;
+  height: 450px;
 }
 
 div .description {
@@ -59,6 +59,10 @@ div.image, div.description {
    display: block;
    margin: 50px auto;
    max-height: 300px;
+ }
+
+ div.support {
+   padding-top: 10px;
  }
 
 //RIGHT PANE:
