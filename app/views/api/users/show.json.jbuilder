@@ -6,4 +6,4 @@ project_ids = []
   project_ids.include?(project_id) ? next : project_ids.push(project_id)
 end
 
-json.project_ids = project_ids.sort
+json.project_ids project_ids.sort
