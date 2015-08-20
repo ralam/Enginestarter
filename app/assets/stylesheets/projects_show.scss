@@ -8,16 +8,17 @@ div.left {
   padding-left: 10%;
 }
 
-div .header, div .body {
+div .body {
   border: 1px solid #aaaaaa;
 }
 
 div .header {
   height: 450px;
+  background-color: #f7fafa;
 }
 
 div .description {
-  border-left: 1px solid #aaaaaa;
+  // border-left: 1px solid #aaaaaa;
 }
 
 .row{
