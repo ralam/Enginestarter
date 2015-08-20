@@ -51,14 +51,12 @@ div.category {
 //
 
 .category-title {
-  background-color: #ffffff;
   position: absolute;
   bottom: 0;
   transition: all 0.5s ease;
-  height: 90px;
-  width: 240px;
+  height: 100px;
+  width: 250px;
   text-align: center;
-  z-index: -1;
 }
 
 .category:hover .category-title {
@@ -66,14 +64,13 @@ div.category {
 }
 
 .category-info {
-  background-color: #aaaaaa;
   position: absolute;
   top: -100px;
   transition: all 0.5s ease;
   height: 100px;
   width: 250px;
   text-align: center;
-  z-index: -1;
+  padding-top: 20px;
 }
 
 .category:hover .category-info {
@@ -81,7 +78,7 @@ div.category {
 }
 
 //
-div.project-preview:hover {
+div.project-preview:hover, .category:hover{
   background-color: rgba(78 ,212 , 78, 0.8)
 }
 
