@@ -6,6 +6,8 @@ div.reward-box {
   padding: 5%;
   border-radius: 5px;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .highlight:hover {
@@ -26,11 +28,27 @@ div.reward-box {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: initial;
+  color: #ffffff;
 }
+
+.hover:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: 25%;
+}
+
 
 .hover:hover {
   opacity: 1;
   transform: scale(1);
+}
+
+.reward-select {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
 }
 
 span.highlight {

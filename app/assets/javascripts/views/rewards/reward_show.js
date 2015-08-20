@@ -9,8 +9,8 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   events: {
     'click .reward-box': 'supportProject',
-    'mouseenter .reward-box': 'highlightReward',
-    'mouseleave .reward-box': 'unhighlightReward'
+    // 'mouseenter .reward-box': 'highlightReward',
+    // 'mouseleave .reward-box': 'unhighlightReward'
   },
 
   render: function () {
