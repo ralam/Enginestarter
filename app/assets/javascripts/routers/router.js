@@ -109,17 +109,17 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
   },
 
   showUser: function (id) {
-    // if (Enginestarter.CURRENT_USER == undefined) {
-    //   Backbone.history.navigate('#index', { trigger: true });
-    //   window.alert('You must login to view your profile.');
-    //   return;
-    // }
-    //
-    // if (Enginestarter.CURRENT_USER.id != id) {
-    //   Backbone.history.navigate('#index', { trigger: true });
-    //   window.alert("You may not view other user's profiles.");
-    //   return;
-    // }
+    if (Enginestarter.CURRENT_USER == undefined) {
+      Backbone.history.navigate('#index', { trigger: true });
+      window.alert('You must login to view your profile.');
+      return;
+    }
+
+    if (Enginestarter.CURRENT_USER.id != id) {
+      Backbone.history.navigate('#index', { trigger: true });
+      window.alert("You may not view other user's profiles.");
+      return;
+    }
 
     this.collection.fetch();
     var user = this.users.getOrFetch(id);
