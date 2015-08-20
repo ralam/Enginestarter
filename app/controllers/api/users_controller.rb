@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     if @user
       render :show
     else
-      render json: ["That user doesn't exist"]
+      render json: ["That user doesn't exist."]
     end
   end
 
@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
   def require_login_as_user
     if params[:id].to_i != current_user.id
-      render json: ["You may not view other user's profiles"]
+      render json: ["You may not view other user's profiles."]
     end
   end
 end
