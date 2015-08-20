@@ -44,11 +44,13 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
+    begin
     @project = Project.find(params[:id])
-    if @project
-      render :show
-    else
-      render json: "", status: 404
+      if @project
+        render :show
+      end
+    rescue
+      render json: ["That project doesn't exist."], status: 404
     end
   end
 

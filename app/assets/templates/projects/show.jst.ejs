@@ -1,7 +1,8 @@
 <% if (project.has("errors"))  {%>
   <div class="row">
     <div class="col-sm-12 title">
-      <h2><%= project.attributes.errors.errors %></h2>
+      <h2><%= project.attributes.errors %></h2><br>
+      <a href="#index">Return to all projects</a>
     </div>
   </div>
 <% } else {%>
