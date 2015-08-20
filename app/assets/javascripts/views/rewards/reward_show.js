@@ -1,6 +1,5 @@
 Enginestarter.Views.RewardShow = Backbone.View.extend({
   template: JST['rewards/show'],
-  highlightTemplate: JST['rewards/highlight'],
 
   initialize: function (options) {
     this.daysLeft = options.daysLeft
@@ -9,8 +8,6 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
 
   events: {
     'click .reward-box': 'supportProject',
-    // 'mouseenter .reward-box': 'highlightReward',
-    // 'mouseleave .reward-box': 'unhighlightReward'
   },
 
   render: function () {
@@ -27,16 +24,6 @@ Enginestarter.Views.RewardShow = Backbone.View.extend({
     });
     $('body').append(modal.$el);
     modal.render();
-  },
-
-  highlightReward: function (event) {
-    $rewardDiv = $(event.currentTarget);
-    $rewardDiv.append(this.highlightTemplate())
-  },
-
-  unhighlightReward: function (event) {
-    $rewardDiv = $(event.currentTarget);
-    $rewardDiv.children().last().remove();
   },
 
   supportProject: function (event) {
