@@ -1,31 +1,22 @@
-<% if (category.has("errors")) {%>
+<div class="container-fluid">
   <div class="row">
     <div class="col-sm-12 title">
-      <h2><%= category.attributes.errors %></h2><br>
-      <a href="#index">Return to all project cateogries</a>
-    </div>
-  </div>
-<% }  else  { %>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 title">
-        <% if (!category) { %>
-          <h1>All Projects:</h1>
-        <% } else { %>
-          <h1>All Projects in <select class="categories">
-              <% categories.forEach(function (listCategory) { %>
-                <option
-                  value="<%= listCategory.id %>"
-                  <%= listCategory.id == category.id ? "selected" : "" %> >
-                  <%= listCategory.escape('title') %>
-                </option>
-              <% }) %>
-            </select>:</h1>
-        <% } %>
+      <% if (!category) { %>
+        <h1>All Projects:</h1>
+      <% } else { %>
+        <h1>All Projects in <select class="categories">
+            <% categories.forEach(function (listCategory) { %>
+              <option
+                value="<%= listCategory.id %>"
+                <%= listCategory.id == category.id ? "selected" : "" %> >
+                <%= listCategory.escape('title') %>
+              </option>
+            <% }) %>
+          </select>:</h1>
+      <% } %>
 
-      </div>
     </div>
   </div>
-  <div class="projects">
-  </div>
-<% } %>
+</div>
+<div class="projects">
+</div>
