@@ -7,10 +7,6 @@ div.reward-box {
   border-radius: 5px;
 }
 
-div.reward-box:hover {
-  border: 1px solid #ffffff;
-}
-
 .highlight:hover {
   cursor: pointer;
 }
@@ -26,5 +22,6 @@ span.highlight {
   text-align: center;
   padding-top: 10%;
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 3.5px;
+  display: block;
 }
