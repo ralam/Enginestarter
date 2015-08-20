@@ -17,13 +17,13 @@ class Api::RewardingsController < ApplicationController
   def require_current_user_is_not_project_owner
     reward_id = rewarding_params[:reward_id]
     if current_user.id == Reward.find(reward_id).project.user.id
-      render json: ["You cannot support your own project"]
+      render json: "You cannot support your own project", status: 403
     end
   end
 
   def require_login
     if !current_user
-      render json: ["Please log in before supporting a project"]
+      render json: "Please log in before supporting a project", status: 401
     end
   end
 
@@ -32,7 +32,7 @@ class Api::RewardingsController < ApplicationController
     reward_id = rewarding_params[:reward_id]
     dup = Rewarding.where(user_id: current_user.id).where(reward_id: reward_id)
     if (dup.first != nil)
-      render json: ["You have already supported this project at this level. You may still pick another reward level."]
+      render json: "You have already supported this project at this level. You may still pick another reward level.", status: 403
     end
   end
 

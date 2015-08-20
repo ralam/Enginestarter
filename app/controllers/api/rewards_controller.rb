@@ -16,7 +16,7 @@ class Api::RewardsController < ApplicationController
     if @reward
       render :show
     else
-      render json: ["That reward doesn't exist"]
+      render json: "That reward doesn't exist", status: 404
     end
   end
 
@@ -27,7 +27,7 @@ class Api::RewardsController < ApplicationController
 
   def require_positive_level
     if reward_params[:level].to_i < 1
-      render json: ["Please enter a reward level of at least $1."]
+      render json: "Please enter a reward level of at least $1.", status: 400
     end
   end
 
