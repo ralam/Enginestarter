@@ -48,7 +48,7 @@ class Api::ProjectsController < ApplicationController
     if @project
       render :show
     else
-      render json: ["That project doesn't exist."], status: 404
+      render json: "", status: 404
     end
   end
 

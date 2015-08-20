@@ -1,3 +1,10 @@
+<% if (project.has("errors"))  {%>
+  <div class="row">
+    <div class="col-sm-12 title">
+      <h2><%= project.attributes.errors.errors %></h2>
+    </div>
+  </div>
+<% } else {%>
 <div class="row">
   <div class="col-sm-12 title">
     <h1><%= project.escape('title') %></h1>
@@ -84,3 +91,4 @@
   <div class="col-sm-3 right" id="rewards">
   </div>
 <div>
+<% } %>

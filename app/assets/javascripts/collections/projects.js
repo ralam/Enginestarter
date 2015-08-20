@@ -1,7 +1,7 @@
 Enginestarter.Collections.Projects = Backbone.Collection.extend({
   url: 'api/projects',
   model: Enginestarter.Models.Project,
-  
+
   parse: function(data) {
     return data.projects
   },
@@ -16,8 +16,9 @@ Enginestarter.Collections.Projects = Backbone.Collection.extend({
       project = new Enginestarter.Models.Project({ id: id });
       collection.add(project);
       project.fetch({
-        error: function () {
+        error: function (XHR, response, status) {
           collection.remove(project);
+          project.set("errors", response.responseJSON);
         }
       });
     }
