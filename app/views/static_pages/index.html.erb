@@ -9,6 +9,9 @@
 <script type="text/javascript">
   $(function () {
     Enginestarter.initialize();
-    // Backbone.history.navigate("index", { trigger: true });
+    if (window.location.href == "http://localhost:3000/#index") {
+      Backbone.history.navigate("index", { trigger: true });
+    }
+
   });
 </script>
