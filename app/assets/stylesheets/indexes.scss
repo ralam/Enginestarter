@@ -48,7 +48,8 @@ div.category {
   border-radius: 5px;
   overflow: hidden;
 }
-//
+
+// Category card transition styles
 
 .category-title {
   position: absolute;
@@ -107,9 +108,15 @@ div.project-body {
   margin-bottom: 15px;
 }
 
+//Progress bar styles
+
 div.progress, div.progress-bar {
   height: 5px;
   margin-bottom: 10px;
+}
+
+div.progress-bar {
+  background-color: #2bde73;
 }
 
 .preview-fig {
