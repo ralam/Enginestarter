@@ -11,12 +11,14 @@ Enginestarter.Collections.Categories = Backbone.Collection.extend({
       category = new Enginestarter.Models.Category({ id: id });
       collection.add(category);
       category.fetch({
-        error: function () {
+        error: function (XHR, response, status) {
+          category.set("errors", response.responseJSON);
           collection.remove(category);
         }
       });
     }
 
+    category.attributes;
     return category;
   }
 });
