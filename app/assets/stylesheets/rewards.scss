@@ -10,11 +10,11 @@ div.reward-box {
   cursor: pointer;
 }
 
-.highlight:hover {
+.right .highlight:hover {
   cursor: pointer;
 }
 
-.hover {
+.right .hover {
   opacity: 0;
   position: absolute;
   width: 100%;
@@ -31,7 +31,7 @@ div.reward-box {
   color: #ffffff;
 }
 
-.hover:before {
+.right .hover:before {
   content: '';
   display: inline-block;
   height: 100%;
@@ -40,15 +40,36 @@ div.reward-box {
 }
 
 
-.hover:hover {
+.right .hover:hover {
   opacity: 1;
   transform: scale(1);
 }
 
-.reward-select {
+.right .reward-select {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+}
+
+.large-rewards .reward-box {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+  background-color: #f7fafa;
+  border: none;
+}
+
+.large-rewards .reward-box:hover {
+  transform: scale(1.05)
+}
+
+.large-rewards .reward-level {
+  font-weight: bold;
+}
+
+form .reward-box {
+  cursor: default;
 }
 
 span.highlight {
