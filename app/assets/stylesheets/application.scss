@@ -27,3 +27,13 @@ body {
   min-height: 100%;
   width: 100%;
 }
+
+a.btn-success {
+  background-color: #2bde73;
+  border: none;
+}
+
+a.btn-success:hover {
+  background-color: #1db95c;
+  border: none;
+}
