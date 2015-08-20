@@ -13,7 +13,7 @@ Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 - [x] View projects
 - [x] Support projects
 - [x] Discover projects
-- [ ] Filter projects by category
+- [x] Filter projects by category
 
 ## Design Docs
 * [View Wireframes][views]
@@ -28,7 +28,7 @@ Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
 I will implement user authentication in Rails. By the end of this phase, users
 will be able to create projects using a simple text form in a Rails view. The most
 important part of this phase will be pushing the app to Heroku and ensuring that
-everything works before moving on to phase 2.
+everything works before moving on to Phase 2.
 
 ### Phase 2: Viewing Projects (~2 days)
 I will add API routes to serve project data as JSON, then add Backbone
@@ -57,6 +57,5 @@ the `projects` collection and fetch from the `category` routes.
 ### Bonus Features (TBD)
 - [ ] Users receive updates when projects hit their goal/deadline
 - [ ] Users can comment on Projects
-- [ ] Multiple sessions/session management
 - [ ] User avatars
 - [ ] Users can share projects via email or social media
