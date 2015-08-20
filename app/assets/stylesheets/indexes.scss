@@ -27,6 +27,7 @@ div.project-preview {
   text-overflow: ellipsis;
   display: inline-block;
   position: relative;
+  border-radius: 10px;
 }
 
 div.category {
@@ -37,6 +38,7 @@ div.category {
   width: 250px;
   display: inline-block;
   position: relative;
+  border-radius: 10px;
 }
 
 div.project-preview:hover, div.category:hover {
