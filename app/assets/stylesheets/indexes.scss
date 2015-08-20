@@ -80,7 +80,8 @@ div.category {
 
 //
 div.project-preview:hover, .category:hover{
-  background-color: rgba(78 ,212 , 78, 0.8)
+  background-color: #2bde73
+  // background-color: rgba(78 ,212 , 78, 0.8)
 }
 
 span.link {
@@ -117,6 +118,10 @@ div.progress, div.progress-bar {
 
 div.progress-bar {
   background-color: #2bde73;
+}
+
+.project-preview:hover .progress-bar{
+  background-color: #000000;
 }
 
 .preview-fig {
