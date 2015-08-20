@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
   def require_login_as_user
     if params[:id].to_i != current_user.id
-      render json: ["You may not view other user's profiles."]
+      render json: {errors: "You may not view other user's profiles."}, status: 401
     end
   end
 end

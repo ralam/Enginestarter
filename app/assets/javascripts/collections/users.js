@@ -11,8 +11,9 @@ Enginestarter.Collections.Users = Backbone.Collection.extend({
       user = new Enginestarter.Models.User({ id: id })
       collection.add(user);
       user.fetch({
-        error: function () {
+        error: function (XHR, response, status) {
           collection.remove(user);
+          user.set("errors", response.responseJSON);
         }
       });
     }
