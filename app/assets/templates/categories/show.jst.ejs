@@ -1,4 +1,9 @@
-<h3><%= category.escape('title') %></h3>
+<div class="category-title">
+  <h3><%= category.escape('title') %></h3>
+</div>
+<div class="category-info">
+  <h4><%= category.escape('projectCount') %> active projects</h3>
+</div>
 <a href="<%= '#projects/category/' + category.escape('id') %>">
   <span class="link"></span>
 </a>
