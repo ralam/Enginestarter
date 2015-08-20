@@ -6,17 +6,21 @@ a.navbar-brand {
 }
 
 nav a {
- color: #ffffff;
+  color: #ffffff;
 }
 
 .navbar-default .navbar-nav li.session-link a {
- color: #00a0ff;
+  color: #00a0ff;
 }
 
 .navbar-default {
- background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 nav.navbar-default {
   background-color: #ffffff;
+}
+
+.navbar-collapse li:hover {
+  background-color: #f7fafa;
 }
