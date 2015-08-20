@@ -30,6 +30,12 @@ div.project-preview {
   border-radius: 5px;
 }
 
+.title h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 div.category {
   text-align: center;
   margin: 10px;
