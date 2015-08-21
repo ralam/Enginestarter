@@ -18,11 +18,8 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
       categories: this.categories,
       category: this.category
     }));
-    if (this.category) {
-      var projects = this.collection.where({category_id: parseInt(this.category.id)})
-    } else {
-      var projects = this.collection.models;
-    }
+
+    var projects = this.getProjects()
 
     if (projects.length > 0 ) {
       projects.forEach(this.addProjectPreview.bind(this));
@@ -35,6 +32,14 @@ Enginestarter.Views.ProjectIndex = Backbone.CompositeView.extend({
       model: project
     });
     this.addSubview('.projects', view);
+  },
+
+  getProjects: function () {
+    if (this.category) {
+      return this.collection.where({category_id: parseInt(this.category.id)})
+    } else {
+      return this.collection.models;
+    }
   },
 
   switchCategory: function (event) {
