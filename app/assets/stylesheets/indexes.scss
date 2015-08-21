@@ -20,12 +20,12 @@ a.project-link {
   text-align: center;
 }
 
-div.project-preview {
+div.project-preview.title {
   text-align: left;
   margin: 10px;
   border: 1px solid #eeeeee;
   height: 250px;
-  width: 250px;
+  width: 300px;
   padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -185,14 +185,18 @@ div.center {
 }
 
 div.project-body {
-  height: 80px;
-  width: 218px;
+  height: 100px;
+  width: 278px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   margin-bottom: 15px;
+}
+
+h3.project-preview-title {
+  margin-top: 0;
 }
 
 //Progress bar
@@ -209,6 +213,9 @@ div.progress-bar {
 .preview-fig {
   font-size: 24px;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 select.categories {

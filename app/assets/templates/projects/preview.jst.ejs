@@ -1,4 +1,4 @@
-<h3><%= project.escape('title') %></h3>
+<h3 class="project-preview-title"><%= project.escape('title') %></h3>
 <div class="project-body">
   <span><%= marked(project.escape('body')) %></span>
 </div>
@@ -8,15 +8,15 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-3 progress-info">
+  <div class="col-sm-4 progress-info">
     <span class="preview-fig"><%= project.escape('funding_progress') %></span>%<br>
     funded
   </div>
-  <div class="col-sm-3 progress-info">
+  <div class="col-sm-4 progress-info">
     <span class="preview-fig">$<%= project.escape('amount_pledged') %></span><br>
     raised
   </div>
-  <div class="col-sm-6 progress-info">
+  <div class="col-sm-4 progress-info">
     <% if (days === 0) {%>
       <span class="preview-fig">Last</span><br>
       day
