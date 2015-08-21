@@ -55,11 +55,11 @@ div.category {
   transition: background-color 0.5s ease;
 }
 
-a.project-link, a#editProject {
+a.project-link, a#editProject, a.add-image {
   color: #00a0ff
 }
 
-a.project-link:hover, a#editProject {
+a.project-link:hover, a#editProject:hover, a.add-image:hover {
   color: #0080cc;
 }
 
