@@ -48,14 +48,7 @@
             <% } %>
           </div>
           <br>
-          <div class="row">
-            <% if (current_user) {%>
-              <% if (project.escape('owner_id') == current_user.id) { %>
-                <a href="<%="#projects/" + project.escape('id') + "/edit" %>"
-                    id="editProject">(Edit)</a>
-              <% } %>
-            <% } %>
-          </div>
+
           <div class="row">
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= project.escape('funding_progress') %>%;">
@@ -75,17 +68,25 @@
                 <% if (days === 0) {%>
                   <span class="preview-fig">Last</span><br>
                   day
-                <% } else { %>
+                <% } else if (days > 0) { %>
                   <span class="preview-fig"><%= days %></span><br>
                   days to go
+                <% } else { %>
+                  <span class="closed-project">This project is closed</span><br>
                 <% } %>
               </div>
             </div>
           </div>
           <div class="row support">
-            <a class="btn btn-lg btn-success" href="<%= "#projects/" + project.escape('id') + "/rewards" %>">
-              Support This Project
-            </a>
+            <% if (current_user && project.escape('owner_id') == current_user.id) { %>
+              <a class="btn btn-edit btn-lg" href="<%="#projects/" + project.escape('id') + "/edit" %>">
+                Edit your project
+              </a>
+            <% } else if (days > -1) { %>
+              <a class="btn btn-lg btn-success" href="<%= "#projects/" + project.escape('id') + "/rewards" %>">
+                Support This Project
+              </a>
+            <% } %>
           </div>
         </div>
       </div>
