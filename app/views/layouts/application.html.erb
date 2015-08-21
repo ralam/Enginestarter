@@ -35,9 +35,13 @@
     var $loading = $('#loading').hide();
     $(document)
       .ajaxStart(function () {
-        $loading.show();
+        loadingTimeout = setTimeout(function () {
+          $loading.fadeIn();
+        }, 250);
+
       })
       .ajaxStop(function () {
+        clearTimeout(loadingTimeout);
         $loading.hide();
       });
   });
