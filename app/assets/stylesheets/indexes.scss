@@ -36,7 +36,6 @@ div.project-preview {
   white-space: nowrap;
   overflow: hidden;
   line-height: 30px;
-  padding-top: 15px;
 }
 
 div.category {
@@ -49,6 +48,7 @@ div.category {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+  transition: background-color 0.5s ease;
 }
 
 // Category card transition styles
@@ -60,6 +60,7 @@ div.category {
   height: 100px;
   width: 250px;
   text-align: center;
+  padding-top: 15px;
 }
 
 .category:hover .category-title {
