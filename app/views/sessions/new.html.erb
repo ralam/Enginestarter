@@ -10,10 +10,30 @@
     name="authenticity_token"
     value="<% form_authenticity_token %>">
   <div class="form-group">
-    <input type="text" name="user[email]" placeholder="Email" class="form-control">
+    <input
+      type="text"
+      name="user[email]"
+      placeholder="Email"
+      id="email"
+      class="form-control">
   </div>
   <div class="form-group">
-    <input type="password" name="user[password]" placeholder="Password" class="form-control">
+    <input
+      type="password"
+      name="user[password]"
+      placeholder="Password"
+      id="password"
+      class="form-control">
   </div>
   <button type="submit" class="btn btn-success btn-block">Log In</button>
+  <button class="btn btn-success btn-block" id="guest-login">Guest Login</button>
 </form>
+
+<script type="text/javascript">
+  $(function () {
+    $('#guest-login').on("click", function () {
+      $('#email').val('guest@example.com');
+      $('#password').val('guestpassword');
+    });
+  });
+</script>
