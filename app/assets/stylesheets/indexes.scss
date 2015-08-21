@@ -55,8 +55,12 @@ div.category {
   transition: background-color 0.5s ease;
 }
 
-a.project-link {
+a {
   color: #00a0ff
+}
+
+.content a:hover {
+  color: #0080cc;
 }
 
 // Category card transition styles
