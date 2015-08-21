@@ -52,3 +52,24 @@ ul.errors {
   max-height: 300px;
   max-width: 100%;
 }
+
+button.btn-cancel {
+  background-color: #fd003b;
+  border: none;
+  color: #ffffff;
+}
+
+button.btn-cancel:hover {
+  background-color: #e40035;
+  color: #ffffff;
+}
+
+button.btn-add {
+  background-color: #00a0ff;
+  color: #ffffff;
+}
+
+button.btn-add:hover {
+  background-color: #0080cc;
+  color: #ffffff;
+}
