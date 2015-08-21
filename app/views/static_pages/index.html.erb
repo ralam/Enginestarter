@@ -9,7 +9,7 @@
 <script type="text/javascript">
   $(function () {
     Enginestarter.initialize();
-    if (window.location.href == "https://enginestarter.herokuapp.com/") {
+    if (window.location.href == "https://enginestarter.herokuapp.com/" || window.location.href == "http://localhost:3000/") {
       Backbone.history.navigate("index", { trigger: true });
     }
 
