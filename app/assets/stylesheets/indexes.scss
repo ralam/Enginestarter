@@ -55,11 +55,11 @@ div.category {
   transition: background-color 0.5s ease;
 }
 
-a {
+a.project-link, a#editProject {
   color: #00a0ff
 }
 
-.content a:hover {
+a.project-link:hover, a#editProject {
   color: #0080cc;
 }
 
@@ -187,11 +187,3 @@ div.carousel-project-body {
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
 }
-
-.carousel-inner > .item > img{
-       width:640px;
-       height:360px;
-     }
-
-.carousel{width:640px;
-            height:360px;}

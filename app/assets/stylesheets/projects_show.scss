@@ -62,6 +62,16 @@ div.support {
   padding-top: 10px;
 }
 
+a.btn-success, button.btn-success {
+  background-color: #2bde73;
+  border: none;
+}
+
+a.btn-success:hover, button.btn-success:hover {
+  background-color: #1db95c;
+  border: none;
+}
+
 //RIGHT PANE:
 //
 div.right {
