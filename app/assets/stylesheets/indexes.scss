@@ -28,7 +28,7 @@ div.project-preview {
   display: inline-block;
   position: relative;
   border-radius: 5px;
-
+  transition: background-color 0.4s ease;
 }
 
 .title h3 {
@@ -137,6 +137,7 @@ div.progress, div.progress-bar {
 
 div.progress-bar {
   background-color: #2bde73;
+  transition: background-color 0.4s ease;
 }
 
 .project-preview:hover .progress-bar{
