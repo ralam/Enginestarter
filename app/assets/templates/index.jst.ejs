@@ -9,21 +9,21 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <% if (activeProject) { %>
-        <img src="<%= activeProject.escape('image_url') %>" class="carousel-image">
-        <div class="carousel-body">
-          <h3><%= activeProject.escape('title') %></h3>
-          <div class="project-body"><%= marked(activeProject.escape('body')) %></div>
+      <% if (activeProject && activeProject.length > 0) { %>
+        <img src="<%= activeProject[0].escape('image_url') %>">
+        <div class="carousel-caption">
+          <h3><%= activeProject[0].escape('title') %></h3><br>
+          <div><%= marked(activeProject[0].escape('body')) %></div>
         </div>
       <% } %>
     </div>
     <% if (lastProjects.length === 3) { %>
       <% lastProjects.forEach(function (project) { %>
         <div class="item">
-          <img src="<%= project.escape('image_url') %>" class="carousel-image">
-          <div class="carousel-body">
+          <img src="<%= project.escape('image_url') %>">
+          <div class="carousel-caption">
             <h3><%= project.escape('title') %></h3>
-            <div class="carousel-project-body"><%= marked(project.escape('body')) %></div>
+            <div><%= marked(project.escape('body')) %></div>
           </div>
         </div>
         <% }); %>

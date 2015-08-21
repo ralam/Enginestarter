@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+a.project-link {
+  color: #00a0ff
+}
+
 .projects {
   padding-left: 5%;
   padding-right: 5%;
@@ -49,6 +53,10 @@ div.category {
   border-radius: 5px;
   overflow: hidden;
   transition: background-color 0.5s ease;
+}
+
+a.project-link {
+  color: #00a0ff
 }
 
 // Category card transition styles
@@ -159,11 +167,7 @@ select.categories {
 
 img.carousel-image {
   margin: 0 auto;
-  max-height: 300px;
-}
-
-div.item {
-  height: 500px;
+  height: 600px;
 }
 
 div.carousel-body {
@@ -179,3 +183,11 @@ div.carousel-project-body {
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
 }
+
+.carousel-inner > .item > img{
+       width:640px;
+       height:360px;
+     }
+
+.carousel{width:640px;
+            height:360px;}
