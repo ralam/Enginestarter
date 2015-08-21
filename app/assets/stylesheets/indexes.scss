@@ -32,7 +32,7 @@ div.project-preview {
   display: inline-block;
   position: relative;
   border-radius: 5px;
-  transition: background-color 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .title h3 {
@@ -151,7 +151,7 @@ a.project-link:hover, a#editProject {
 
 //
 div.project-preview:hover {
-  background-color: #2bde73
+  transform: scale(1.05);
 }
 
 .category:nth-of-type(5n + 1):hover {
@@ -204,11 +204,6 @@ div.progress, div.progress-bar {
 
 div.progress-bar {
   background-color: #2bde73;
-  transition: background-color 0.4s ease;
-}
-
-.project-preview:hover .progress-bar{
-  background-color: #000000;
 }
 
 .preview-fig {
