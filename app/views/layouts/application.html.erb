@@ -22,12 +22,29 @@
       <% end %>
     });
 
+
   </script>
 </head>
 <body>
   <%= render "layouts/navbar" %>
+  <div id="loading"></div>
+  <script type="text/javascript">
+  $(function () {
+    var spinner = new Spinner().spin();
+    document.getElementById('loading').appendChild(spinner.el)
+    var $loading = $('#loading').hide();
+    $(document)
+      .ajaxStart(function () {
+        $loading.show();
+      })
+      .ajaxStop(function () {
+        $loading.hide();
+      });
+  });
+  </script>
 
   <div class="content">
+
     <%= yield %>
   </div>
 </body>
