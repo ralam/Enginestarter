@@ -37,7 +37,7 @@ Enginestarter.Views.ProjectEditForm = Backbone.CompositeView.extend({
 
   addRewardItem: function (event) {
     event.preventDefault();
-    var $button = $(event.currentTarget);
+    $(event.currentTarget).blur();
     this.rewardCounter += 1;
     $('div.reward-items').append(this.rewardTemplate({counter: this.rewardCounter}));
   },
