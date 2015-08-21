@@ -74,6 +74,7 @@ div.category {
   width: 250px;
   text-align: center;
   padding-top: 30px;
+  color: #ffffff;
 }
 
 .category:hover .category-info {
@@ -81,8 +82,24 @@ div.category {
 }
 
 //
-div.project-preview:hover, .category:hover{
+div.project-preview:hover {
   background-color: #2bde73
+}
+
+.category:nth-of-type(5n + 1):hover {
+  background-color: #ff81ac
+}
+.category:nth-of-type(5n + 2):hover {
+  background-color: #a695f9
+}
+.category:nth-of-type(5n + 3):hover {
+  background-color: #ff9fd6
+}
+.category:nth-of-type(5n + 4):hover {
+  background-color: #00c9ab
+}
+.category:nth-of-type(5n + 5):hover {
+  background-color: #12bcea
 }
 
 span.link {
