@@ -17,8 +17,13 @@
     raised
   </div>
   <div class="col-sm-6 progress-info">
-    <span class="preview-fig"><%= days %></span><br>
-    days to go
+    <% if (days === 0) {%>
+      <span class="preview-fig">Last</span><br>
+      day
+    <% } else { %>
+      <span class="preview-fig"><%= days %></span><br>
+      days to go
+    <% } %>
   </div>
 </div>
 <a href="<%= '#projects/' + project.escape('id') %>">

@@ -34,9 +34,15 @@
             Pledged of $<%= project.escape('goal')%> goal
           </div>
           <div class="row days">
-            <% if ( days > 0 ) { %>
+            <% if ( days > 1 ) { %>
               <span class="main-figure"><%= days %></span><br>
               days remaining
+            <% } else if ( days > 1 ) { %>
+              <span class="main-figure"><%= days %></span><br>
+              day remaining
+            <% } else if ( days === 0) { %>
+              <span class="main-figure">Last day</span><br>
+              to support this project
             <% } else { %>
               <span class="closed-project">This project is closed</span><br>
             <% } %>
@@ -66,14 +72,18 @@
                 raised
               </div>
               <div class="col-sm-6 progress-info">
-                <span class="preview-fig"><%= days %></span><br>
-                days to go
+                <% if (days === 0) {%>
+                  <span class="preview-fig">Last</span><br>
+                  day
+                <% } else { %>
+                  <span class="preview-fig"><%= days %></span><br>
+                  days to go
+                <% } %>
               </div>
             </div>
           </div>
           <div class="row support">
             <a class="btn btn-lg btn-success" href="<%= "#projects/" + project.escape('id') + "/rewards" %>">
-              <!-- <button class="btn btn-lg btn-success">Support This Project</button> -->
               Support This Project
             </a>
           </div>
