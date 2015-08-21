@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12 title">
-      <a href="/#projects"><h2>Start Discovering Projects</h2></a>
+      <a href="/#index"><h2>Start Discovering Projects</h2></a>
     </div>
   </div>
 </div>
@@ -9,7 +9,7 @@
 <script type="text/javascript">
   $(function () {
     Enginestarter.initialize();
-    if (window.location.href == "http://localhost:3000/") {
+    if (window.location.pathname == "/") {
       Backbone.history.navigate("index", { trigger: true });
     }
 
