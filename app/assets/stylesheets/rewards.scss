@@ -8,11 +8,15 @@ div.reward-box {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  width: 225px;
+
 }
 
 .right .highlight:hover {
   cursor: pointer;
+}
+
+.right .reward-box {
+  width: 225px;
 }
 
 .right .hover {
