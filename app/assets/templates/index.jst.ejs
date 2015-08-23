@@ -17,17 +17,16 @@
         </div>
       <% } %>
     </div>
-    <% if (lastProjects.length === 3) { %>
-      <% lastProjects.forEach(function (project) { %>
-        <div class="item">
-          <img src="<%= project.escape('image_url') %>">
-          <div class="carousel-caption">
-            <h3><%= project.escape('title') %></h3>
-            <div><%= marked(project.escape('body')) %></div>
-          </div>
+    <div class="item">
+      <% if (activeProject && activeProject.length > 0) { %>
+        <img src="<%= activeProject[0].escape('image_url') %>">
+        <div class="carousel-caption">
+          <h3><%= activeProject[0].escape('title') %></h3><br>
+          <div><%= marked(activeProject[0].escape('body')) %></div>
         </div>
-        <% }); %>
-    <% } %>
+      <% } %>
+    </div>
+
   </div>
 
   <!-- Controls -->

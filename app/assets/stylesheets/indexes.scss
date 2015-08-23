@@ -244,3 +244,12 @@ div.carousel-project-body {
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
 }
+
+.carousel-inner>.active, .carousel-inner>.next, .carousel-inner>.prev {
+   width: 102.5%!important;
+}
+
+div.carousel {
+  width:640px;
+  height:214px;
+}
