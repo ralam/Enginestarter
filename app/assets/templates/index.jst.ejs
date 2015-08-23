@@ -1,4 +1,4 @@
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -7,26 +7,26 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+
+  <div class="carousel-inner">
     <div class="item active">
-      <% if (activeProject && activeProject.length > 0) { %>
-        <img src="<%= activeProject[0].escape('image_url') %>">
-        <div class="carousel-caption">
-          <h3><%= activeProject[0].escape('title') %></h3><br>
-          <div><%= marked(activeProject[0].escape('body')) %></div>
-        </div>
-      <% } %>
+      <img src="http://placehold.it/1280x315" alt="..." style="width: 100%; height: 315px">
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
     </div>
     <div class="item">
-      <% if (activeProject && activeProject.length > 0) { %>
-        <img src="<%= activeProject[0].escape('image_url') %>">
-        <div class="carousel-caption">
-          <h3><%= activeProject[0].escape('title') %></h3><br>
-          <div><%= marked(activeProject[0].escape('body')) %></div>
-        </div>
-      <% } %>
+      <img src="http://placehold.it/1280x315" alt="..." style="width: 100%; height: 315px">
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
     </div>
-
+    <div class="item">
+      <img src="http://placehold.it/1280x315" alt="..." style="width: 100%; height: 315px">
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
   </div>
 
   <!-- Controls -->

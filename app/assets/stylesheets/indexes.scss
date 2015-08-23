@@ -225,31 +225,23 @@ select.categories {
 }
 
 //Carousel
-
 img.carousel-image {
-  margin: 0 auto;
-  height: 600px;
+  width: 100%;
+  height: 315px;
 }
+//
+// div.carousel-body {
+//   margin: 0 auto;
+//   width: 400px;
+//   text-align: center;
+// }
+//
+// div.carousel-project-body {
+//   width: 400px;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   -o-text-overflow: ellipsis;
+//   -ms-text-overflow: ellipsis;
+// }
 
-div.carousel-body {
-  margin: 0 auto;
-  width: 400px;
-  text-align: center;
-}
-
-div.carousel-project-body {
-  width: 400px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
-}
-
-.carousel-inner>.active, .carousel-inner>.next, .carousel-inner>.prev {
-   width: 102.5%!important;
-}
-
-div.carousel {
-  width:640px;
-  height:214px;
-}
+.carousel-inner>.active { width: 100% }
