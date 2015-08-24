@@ -3,24 +3,30 @@ Enginestarter.Views.Index = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render)
+    this.activeProject = [];
+    this.lastProjects = [];
   },
 
   render: function () {
-    var activeProject = [];
-    var lastProjects = [];
-    if (this.collection) {
-      activeProject = this.collection.where({id: 35});
-      lastProjects = []
-      lastProjects.push(this.collection.where({id: 36}));
-      lastProjects.push(this.collection.where({id: 37}));
-      lastProjects.push(this.collection.where({id: 38}));
-    }
+    this.fetchCarouselProjects();
+
 
     this.$el.html(this.template({
-      activeProject: activeProject,
-      lastProjects: lastProjects
+      activeProject: this.activeProject,
+      lastProjects: this.lastProjects
     }));
 
     return this;
+  },
+
+  fetchCarouselProjects: function () {
+    if (this.collection) {
+      this.activeProject = this.collection.where({id: 35});
+      this.lastProjects = []
+      this.lastProjects.push(this.collection.where({id: 36}));
+      this.lastProjects.push(this.collection.where({id: 37}));
+      this.lastProjects.push(this.collection.where({id: 38}));
+    }
   }
+
 });
