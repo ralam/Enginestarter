@@ -1,22 +1,33 @@
-Enginestarter.Views.Index = Backbone.View.extend({
+Enginestarter.Views.Index = Backbone.CompositeView.extend({
   template: JST['index'],
 
-  initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render)
+  initialize: function (options) {
+    this.categories = options.categories;
     this.activeProject = [];
     this.lastProjects = [];
+    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.categories, 'sync', this.render)
   },
 
   render: function () {
     this.fetchCarouselProjects();
-
-
     this.$el.html(this.template({
       activeProject: this.activeProject,
       lastProjects: this.lastProjects
     }));
 
+    if (this.categories.models.length > 0) {
+      this.categories.models.forEach(this.addCategory.bind(this));
+    }
+
     return this;
+  },
+
+  addCategory: function (category) {
+    var view = new Enginestarter.Views.CategoryShow({
+      model: category
+    });
+    this.addSubview('#categories', view);
   },
 
   fetchCarouselProjects: function () {
