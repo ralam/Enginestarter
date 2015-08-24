@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12 title">
+    <div class="col-sm-12 carousel-row">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="10000">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -14,18 +14,16 @@
 
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <% if (activeProject && activeProject.length > 0) { %>
-              <a href="<%= "/#projects/" + activeProject[0].escape("id") %>" class="carousel-link">
-                <img src="<%= activeProject[0].escape('image_url') %>" class="carousel-image">
-                <div class="carousel-caption">
-                  <h3><%= activeProject[0].escape('title') %></h3>
-                  <div><%= marked(activeProject[0].escape('body')) %></div><br>
-                  <a class="btn btn-lg btn-success" href="<%= "#projects/" + activeProject[0].escape('id') %>">View This Project</a>
-                  <br>
-                  <br>
-                </div>
-              </a>
-            <% } %>
+            <a href="/#projects/new" class="carousel-link">
+              <img src="http://res.cloudinary.com/dp32c2sq2/image/upload/v1440175311/digzzaw4hegjbyqdele0.jpg" class="carousel-image">
+              <div class="carousel-caption">
+                <h2>You've got the plans</h2>
+                <h3>Now start croudfunding your project on Enginestarter</h3><br>
+                <a class="btn btn-lg btn-success" href="/#projects/new">Get started</a>
+                <br>
+                <br>
+              </div>
+            </a>
           </div>
           <% if (lastProjects[0][0]) { %>
             <% lastProjects.forEach(function (project) { %>
@@ -33,8 +31,8 @@
                   <a href="<%= "/#projects/" + project[0].escape("id") %>" class="carousel-link">
                   <img src="<%= project[0].escape('image_url') %>" class="carousel-image">
                   <div class="carousel-caption">
-                    <h3><%= project[0].escape('title') %></h3>
-                    <div><%= marked(project[0].escape('body')) %></div><br>
+                    <h2><%= project[0].escape('title') %></h2>
+                    <h3><%= marked(project[0].escape('body')) %></h3><br>
                     <a class="btn btn-lg btn-success" href="<%= "#projects/" + project[0].escape('id') %>">View This Project</a>
                     <br>
                     <br>

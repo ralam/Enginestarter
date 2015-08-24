@@ -3,7 +3,6 @@ Enginestarter.Views.Index = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.categories = options.categories;
-    this.activeProject = [];
     this.lastProjects = [];
     this.listenTo(this.collection, 'sync', this.render)
     this.listenTo(this.categories, 'sync', this.render)
@@ -12,7 +11,6 @@ Enginestarter.Views.Index = Backbone.CompositeView.extend({
   render: function () {
     this.fetchCarouselProjects();
     this.$el.html(this.template({
-      activeProject: this.activeProject,
       lastProjects: this.lastProjects
     }));
 
@@ -32,11 +30,10 @@ Enginestarter.Views.Index = Backbone.CompositeView.extend({
 
   fetchCarouselProjects: function () {
     if (this.collection) {
-      this.activeProject = this.collection.where({id: 35});
       this.lastProjects = []
-      this.lastProjects.push(this.collection.where({id: 36}));
-      this.lastProjects.push(this.collection.where({id: 37}));
-      this.lastProjects.push(this.collection.where({id: 38}));
+      this.lastProjects.push(this.collection.where({id: 7}));
+      this.lastProjects.push(this.collection.where({id: 2}));
+      this.lastProjects.push(this.collection.where({id: 3}));
     }
   }
 

@@ -250,7 +250,8 @@ select.categories {
 .carousel-inner .right {
   margin-bottom: 0px;
 }
- .item img.carousel-image {
+
+.item img.carousel-image {
   height: 400px !important;
   margin: 0 auto;
 }
@@ -270,4 +271,8 @@ select.categories {
 a.carousel-link, a.carousel-link:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+div.col-sm-12.carousel-row {
+  padding: 0px;
 }
