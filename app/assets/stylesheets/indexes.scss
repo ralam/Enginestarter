@@ -255,8 +255,6 @@ select.categories {
   margin: 0 auto;
 }
 
-
-
 .carousel-inner .item.active {
   height: 400px;
 }
@@ -267,4 +265,9 @@ select.categories {
 
 .carousel-inner .item.next {
   height: 400px;
+}
+
+a.carousel-link, a.carousel-link:hover {
+  color: #ffffff;
+  text-decoration: none;
 }

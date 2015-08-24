@@ -15,11 +15,14 @@
         <div class="carousel-inner" role="listbox">
           <div class="item active">
             <% if (activeProject && activeProject.length > 0) { %>
-              <a href="<%= "/#projects/" + activeProject[0].escape("id") %>">
+              <a href="<%= "/#projects/" + activeProject[0].escape("id") %>" class="carousel-link">
                 <img src="<%= activeProject[0].escape('image_url') %>" class="carousel-image">
                 <div class="carousel-caption">
-                  <h3><%= activeProject[0].escape('title') %></h3><br>
-                  <div><%= marked(activeProject[0].escape('body')) %></div>
+                  <h3><%= activeProject[0].escape('title') %></h3>
+                  <div><%= marked(activeProject[0].escape('body')) %></div><br>
+                  <a class="btn btn-lg btn-success" href="<%= "#projects/" + activeProject[0].escape('id') %>">View This Project</a>
+                  <br>
+                  <br>
                 </div>
               </a>
             <% } %>
@@ -27,11 +30,14 @@
           <% if (lastProjects[0][0]) { %>
             <% lastProjects.forEach(function (project) { %>
               <div class="item">
-                  <a href="<%= "/#projects/" + project[0].escape("id") %>">
+                  <a href="<%= "/#projects/" + project[0].escape("id") %>" class="carousel-link">
                   <img src="<%= project[0].escape('image_url') %>" class="carousel-image">
                   <div class="carousel-caption">
                     <h3><%= project[0].escape('title') %></h3>
-                    <div><%= marked(project[0].escape('body')) %></div>
+                    <div><%= marked(project[0].escape('body')) %></div><br>
+                    <a class="btn btn-lg btn-success" href="<%= "#projects/" + project[0].escape('id') %>">View This Project</a>
+                    <br>
+                    <br>
                   </div>
                   </a>
                 </div>
