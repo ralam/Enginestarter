@@ -31,6 +31,7 @@ gem 'cloudinary'
 gem 'figaro'
 gem 'jquery-ui-rails'
 gem 'whenever', :require => false
+gem 'heroku-deflater', :group => :production
 
 # Use Unicorn as the app server
 # gem 'unicorn'
