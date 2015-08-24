@@ -244,4 +244,12 @@ img.carousel-image {
 //   -ms-text-overflow: ellipsis;
 // }
 
-.carousel-inner>.active { width: 100% }
+.carousel-inner>.active { width: 100%; }
+
+.carousel-inner .next.left {
+  padding: 0;
+}
+
+.carousel-inner .right {
+  margin-bottom: 0px;
+}
