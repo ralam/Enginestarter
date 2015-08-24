@@ -251,11 +251,20 @@ select.categories {
   margin-bottom: 0px;
 }
  .item img.carousel-image {
-  //  width: 600px;
-  //  height: 315px;
-   margin: 0 auto;
- }
+  height: 400px !important;
+  margin: 0 auto;
+}
 
-.carousel-inner .item {
-  max-height: 400px;
+
+
+.carousel-inner .item.active {
+  height: 400px;
+}
+
+.carousel-inner .item.prev {
+  height: 400px;
+}
+
+.carousel-inner .item.next {
+  height: 400px;
 }
