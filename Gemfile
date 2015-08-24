@@ -30,6 +30,7 @@ gem 'backbone-on-rails'
 gem 'cloudinary'
 gem 'figaro'
 gem 'jquery-ui-rails'
+gem 'whenever', :require => false
 
 # Use Unicorn as the app server
 # gem 'unicorn'
