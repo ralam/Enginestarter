@@ -270,3 +270,28 @@ Reward.create(
   info: "I'll send you a copy of the first printing of my completed book once it's published.",
   project_id: 7
 )
+
+Rewarding.create(
+  user_id: 2,
+  reward_id: 3
+)
+
+Rewarding.create(
+  user_id: 2,
+  reward_id: 2
+)
+
+Rewarding.create(
+  user_id: 2,
+  reward_id: 15
+)
+
+Rewarding.create(
+  user_id: 2,
+  reward_id: 24
+)
+
+Rewarding.create(
+  user_id: 1,
+  reward_id: 20
+)
