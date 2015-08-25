@@ -8,18 +8,20 @@ require 'rake'
 Rake.application.run
 
 
-desc "This task is called by the Heroku scheduler add-on"
-task :reseed => :environment do
-  puts "Reseeding database"
-  ActiveRecord::Base.connection.execute("TRUNCATE TABLE categories")
-  ActiveRecord::Base.connection.execute("ALTER SEQUENCE categories_id_seq RESTART WITH 1")
-  ActiveRecord::Base.connection.execute("DELETE FROM users WHERE id > 2")
-  ActiveRecord::Base.connection.execute("TRUNCATE TABLE projects")
-  ActiveRecord::Base.connection.execute("ALTER SEQUENCE projects_id_seq RESTART WITH 1")
-  ActiveRecord::Base.connection.execute("TRUNCATE TABLE rewards")
-  ActiveRecord::Base.connection.execute("ALTER SEQUENCE rewards_id_seq RESTART WITH 1")
-  ActiveRecord::Base.connection.execute("TRUNCATE TABLE rewardings")
-  ActiveRecord::Base.connection.execute("ALTER SEQUENCE rewardings_id_seq RESTART WITH 1")
-  Rake::Task["db:seed"].invoke
-  puts "done."
+namespace :db do
+  desc "Reset project data"
+  task :reseed => :environment do
+    puts "Reseeding database"
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE categories")
+    ActiveRecord::Base.connection.execute("ALTER SEQUENCE categories_id_seq RESTART WITH 1")
+    ActiveRecord::Base.connection.execute("DELETE FROM users WHERE id > 2")
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE projects")
+    ActiveRecord::Base.connection.execute("ALTER SEQUENCE projects_id_seq RESTART WITH 1")
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE rewards")
+    ActiveRecord::Base.connection.execute("ALTER SEQUENCE rewards_id_seq RESTART WITH 1")
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE rewardings")
+    ActiveRecord::Base.connection.execute("ALTER SEQUENCE rewardings_id_seq RESTART WITH 1")
+    Rake::Task["db:seed"].invoke
+    puts "done."
+  end
 end
