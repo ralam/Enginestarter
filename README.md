@@ -2,7 +2,9 @@
 
 [Link to live site][site]
 
-[site]: http://enginestarter.xyz
+Best viewed in Chrome
+
+[site]: http://www.enginestarter.xyz
 
 ## Minimum Viable Product
 Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
