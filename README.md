@@ -1,8 +1,8 @@
 # Enginestarter
 
-[Heroku link][heroku]
+[Link to live site][site]
 
-[heroku]: https://enginestarter.herokuapp.com/
+[site]: http://enginestarter.xyz
 
 ## Minimum Viable Product
 Enginestarter is a clone of Kickstarter built on Rails and Backbone. Users can:
@@ -47,7 +47,8 @@ file upload so users can add images to their projects.
 I will implement the ability for users to support projects by setting up the
 necessary Backbone routes. Users should not be able to support their own
 projects or projects that reached their deadline. Projects should update their
-goal information appropriately as users support them.
+goal information appropriately as users support them. Users can view projects
+they have supported on a basic profile page.
 
 ### Phase 5: Project Categories (~2 days)
 I'll add `category` route to the Projects controller and a `CategoryIndex`
