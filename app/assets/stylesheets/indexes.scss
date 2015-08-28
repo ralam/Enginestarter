@@ -20,28 +20,6 @@ a.project-link {
   text-align: center;
 }
 
-div.project-preview.title {
-  text-align: left;
-  margin: 10px;
-  border: 1px solid #eeeeee;
-  height: 250px;
-  width: 300px;
-  padding: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  position: relative;
-  border-radius: 5px;
-  transition: all 0.2s ease;
-}
-
-.title h3 {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  line-height: 30px;
-}
-
 div.category {
   text-align: center;
   margin: 10px;
@@ -62,6 +40,8 @@ a.project-link, a#editProject, a.add-image {
 a.project-link:hover, a#editProject:hover, a.add-image:hover {
   color: #0080cc;
 }
+
+//Category colors
 
 .all-categories {
   background-color: #21CBAE;
@@ -150,9 +130,6 @@ a.project-link:hover, a#editProject:hover, a.add-image:hover {
 }
 
 //
-div.project-preview:hover {
-  transform: scale(1.05);
-}
 
 .category:nth-of-type(5n + 1):hover {
   background-color: #ff81ac
@@ -195,10 +172,6 @@ div.project-body {
   margin-bottom: 15px;
 }
 
-h3.project-preview-title {
-  margin-top: 0;
-}
-
 //Progress bar
 
 div.progress, div.progress-bar {
@@ -225,21 +198,6 @@ select.categories {
 }
 
 //Carousel
-
-//
-// div.carousel-body {
-//   margin: 0 auto;
-//   width: 400px;
-//   text-align: center;
-// }
-//
-// div.carousel-project-body {
-//   width: 400px;
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   -o-text-overflow: ellipsis;
-//   -ms-text-overflow: ellipsis;
-// }
 
 .carousel-inner>.active { width: 100%; }
 
