@@ -5,6 +5,7 @@ img.preview-image {
 div.preview-image-container {
   height: 200px;
   max-width:100%;
+  overflow:hidden;
 }
 
 div.project-preview.title {
@@ -20,6 +21,7 @@ div.project-preview.title {
   position: relative;
   border-radius: 5px;
   transition: all 0.2s ease;
+  background-color: #ffffff;
 }
 
 div.project-preview:hover {
