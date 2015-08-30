@@ -412,7 +412,7 @@ Reward.create(
 
 Project.create(
   title: 'Track the wumpus!',
-  body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate."
+  body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate.",
   goal: 800,
   end_date: "2015-11-10",
   owner_id: "1",
