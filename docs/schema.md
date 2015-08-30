@@ -16,8 +16,9 @@ image_url    | string    | not null
 column name  | data type | details
 -------------|-----------|-----------------------
 id           | integer   | not null, primary key
-reward_level | integer   | not null
-reward_info  | string    | not null
+level        | integer   | not null
+title        | string    | not null
+info         | string    | not null
 project_id   | integer   | not null, foreign key (references projects)
 
 ## rewardings
