@@ -4,23 +4,24 @@
 
 Best viewed in Chrome.
 
+[site]: http://www.enginestarter.xyz
+
 ## Description
 
 Enginestarter is a Kickstarter-inspired crowdfunding site built on Rails and Backbone. To experience the full functionality of the site, log into the guest account using the link in the top right of the navbar.
 
-You can view active projects and can filter which projects they want to view by category. Each project's preview card features the project's image, some info about the project, and a progress bar indicating how close a project is to reaching its funding goal.
-
-After clicking through on a project preview, users are taken to that project's page, where they can view the supporter levels available for that project. To support a project, users can either click on a reward directly or on the support button. You may only select a particular reward level once, but they may choose to support a project at multiple reward levels.
-
-You may navigate to their profile page from the link in the nav bar. On their profile page, users will see preview cards for all of the projects they have supported. Clicking on a project preview will take the user to that project.
-
-You may also create new projects using the "Start" link in the nav bar. All of the fields on the project form are required, and a project must also have at least one reward. The description field supports markdown, enabling users to add text formatting and links. Images are uploaded using the Cloudinary widget. You can create as many rewards as they like per project.
-
-You may also edit the description and image of active projects they have created and add new reward levels. The guest account is the owner of the project "Building a hovercraft", under the Technology category.
-
-To edit a project, users first navigate to their project the same way they would navigate to other projects, and then click on the Edit project button on their project page.
-
-[site]: http://www.enginestarter.xyz
+Users can:
+ - [x] Create new accounts and/or log in using the guest account.
+ - [x] View active projects.
+ - [x] Filter which projects by category.
+ - [x] View supporter levels available for each project.
+ - [x] Support projects at various reward levels (restricted to once per reward level per project).
+ - [x] Support a project multiple times at different reward levels.
+ - [x] View the active projects they've supported from their user profile page.
+ - [x] Create new projects.
+ - [x] Set as many rewards as they want per project (minimum of one).
+ - [x] Edit the description and image of their active projects.
+ - [x] Add new rewards to their active projects via the edit form.
 
 ## Minimum Viable Product
 Users can:
