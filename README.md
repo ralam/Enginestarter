@@ -11,17 +11,17 @@ Best viewed in Chrome.
 Enginestarter is a Kickstarter-inspired crowdfunding site built on Rails and Backbone. To experience the full functionality of the site, log into the guest account using the link in the top right of the navbar.
 
 Users can:
- - [x] Create new accounts and/or log in using the guest account.
- - [x] View active projects.
- - [x] Filter which projects by category.
- - [x] View supporter levels available for each project.
- - [x] Support projects at various reward levels (restricted to once per reward level per project).
- - [x] Support a project multiple times at different reward levels.
- - [x] View the active projects they've supported from their user profile page.
- - [x] Create new projects.
- - [x] Set as many rewards as they want per project (minimum of one).
- - [x] Edit the description and image of their active projects.
- - [x] Add new rewards to their active projects via the edit form.
+ - Create new accounts and/or log in using the guest account.
+ - View active projects.
+ - Filter which projects by category.
+ - View supporter levels available for each project.
+ - Support projects at various reward levels (restricted to once per reward level per project).
+ - Support a project multiple times at different reward levels.
+ - View the active projects they've supported from their user profile page.
+ - Create new projects.
+ - Set as many rewards as they want per project (minimum of one).
+ - Edit the description and image of their active projects.
+ - Add new rewards to their active projects via the edit form.
 
 ## Minimum Viable Product
 Users can:
