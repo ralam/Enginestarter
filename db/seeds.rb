@@ -354,7 +354,7 @@ Reward.create(
 
 Project.create(
   title: 'Inventing teleportation',
-  body: "I'm working on inventing teleportation. I'm not sure how to do it, and I need your help."
+  body: "I'm working on inventing teleportation. I'm not sure how to do it, and I need your help.",
   goal: 200000,
   end_date: "2015-12-25",
   owner_id: "1",
@@ -384,7 +384,7 @@ Reward.create(
 
 Project.create(
   title: 'Starting art classes',
-  body: "I'm starting art classes at my local high school, but we need funding for materials."
+  body: "I'm starting art classes at my local high school, but we need funding for materials.",
   goal: 300,
   end_date: "2015-11-29",
   owner_id: "1",
