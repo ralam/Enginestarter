@@ -383,13 +383,41 @@ Reward.create(
 #Project 11
 
 Project.create(
+  title: 'Starting art classes',
+  body: "I'm starting art classes at my local high school, but we need funding for materials."
+  goal: 300,
+  end_date: "2015-11-29",
+  owner_id: "1",
+  category_id: "2",
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898183/rncnesd9nnp2cvarsxt4.jpg"
+)
+Reward.create(
+  level: '10',
+  title: "Thank you note",
+  info: "I'll handwrite you a thank-you note for your support.",
+  project_id: 11
+)
+Reward.create(
+  level: '50',
+  title: "Student appreciation dinner",
+  info: "The students will make dinner for everyone who supports us at this level.",
+  project_id: 11
+)
+Reward.create(
+  level: '200',
+  title: "Memorial plaque",
+  info: "We'll add your name as a patron of the arts to a memorial plaque on the school grounds.",
+  project_id: 11
+)
+
+Project.create(
   title: 'Track the wumpus!',
   body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate."
   goal: 800,
   end_date: "2015-11-10",
   owner_id: "1",
   category_id: "1",
-  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898183/rncnesd9nnp2cvarsxt4.jpg"
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898909/xkbfkar8be9aaow5qe7b.jpg"
 )
 Reward.create(
   level: '14',
@@ -404,7 +432,7 @@ Reward.create(
   project_id: 12
 )
 Reward.create(
-  level: '110',
+  level: '120',
   title: "Wumpus footprint casts",
   info: "I'll make a mold of the wumpus's footprints and send you a clay cast made using the mold.",
   project_id: 12
