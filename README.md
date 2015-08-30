@@ -4,11 +4,7 @@
 
 Best viewed in Chrome.
 
-Enginestarter is a Kickstarter-inspired crowdfunding site built on Rails and Backbone. Users can
-
-No login required:
-
-To experience the full functionality of the site, log in using the link in the top right of the navbar. There is an option to log in using a guest account, so it it not necessary to create your own account.
+Enginestarter is a Kickstarter-inspired crowdfunding site built on Rails and Backbone. To experience the full functionality of the site, log into the guest account using the link in the top right of the navbar.
 
 Users can view active projects and can filter which projects they want to view by category. Each project's preview card features the project's image, some info about the project, and a progress bar indicating how close a project is to reaching its funding goal.
 
@@ -16,7 +12,7 @@ After clicking through on a project preview, users are taken to that project's p
 
 Users may navigate to their profile page from the link in the nav bar. On their profile page, users will see preview cards for all of the projects they have supported. Clicking on a project preview will take the user to that project.
 
-Users may also create new projects using the "Start" link in the nav bar. All of the fields on the project form are required, and a project must also have at least one reward. The description field supports markdown, enabling users to add text formatting and links. Images are uploaded using the Cloudinary widget. Users can create as many rewards as they like per project. 
+Users may also create new projects using the "Start" link in the nav bar. All of the fields on the project form are required, and a project must also have at least one reward. The description field supports markdown, enabling users to add text formatting and links. Images are uploaded using the Cloudinary widget. Users can create as many rewards as they like per project.
 
 Users may also edit the description and image of active projects they have created and add new reward levels. The guest account is the owner of the project "Building a hovercraft", under the Technology category.
 
