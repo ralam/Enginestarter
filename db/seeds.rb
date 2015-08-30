@@ -106,7 +106,7 @@ Project.create(
   end_date: "2015-12-30",
   owner_id: "1",
   category_id: "1",
-  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440377375/es3ylidgo022ytyt7cen.jpg"
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440957089/b6bgerwztcai5jtgcmcf.jpg"
 )
 Reward.create(
   level: '25',
