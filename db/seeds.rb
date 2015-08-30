@@ -271,6 +271,152 @@ Reward.create(
   project_id: 7
 )
 
+#Project 8
+
+Project.create(
+  title: 'Flying car',
+  body: "Why don't we have flying cars yet? I'm going to build one!",
+  goal: 15000,
+  end_date: "2016-1-03",
+  owner_id: "1",
+  category_id: "5",
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440871938/dmldtqaysl3zgxe0xcvx.jpg"
+)
+Reward.create(
+  level: '10',
+  title: "Spare part",
+  info: "You'll get a spare part that broke off of one my prototypes.",
+  project_id: 8
+)
+Reward.create(
+  level: '300',
+  title: "Ticket to launch day",
+  info: "Come watch the maiden flight of my flying car! Safety not guarenteed.",
+  project_id: 8
+)
+Reward.create(
+  level: '1000',
+  title: "Test drive",
+  info: "You'll get to take my flying car for a test drive. You're not allowed to fly it though.",
+  project_id: 8
+)
+Reward.create(
+  level: '5000',
+  title: "Test flight",
+  info: "You'll get to take my flying car for a test flight. There's only one seat, so good luck!",
+  project_id: 8
+)
+
+Reward.create(
+  level: '20000',
+  title: "Test flight in passenger seat",
+  info: "I'll add on a second seat to the car so you can go for a test flight without having to fly the car!",
+  project_id: 8
+)
+
+#Project 9
+
+Project.create(
+  title: 'Interactive pie fight exhibit',
+  body: "I'm going to host a live pie fight and take pictures for my art gallery.",
+  goal: 675,
+  end_date: "2015-12-11",
+  owner_id: "1",
+  category_id: "2",
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440871938/dmldtqaysl3zgxe0xcvx.jpg"
+)
+Reward.create(
+  level: '10',
+  title: "Attend the pie fight",
+  info: "Come watch people throw pies at each other!",
+  project_id: 9
+)
+Reward.create(
+  level: '35',
+  title: "Participate in the pie fight",
+  info: "Join in the fun and be part of the art! Throw pies at other people.",
+  project_id: 9
+)
+Reward.create(
+  level: '50',
+  title: "Attend the gallery opening",
+  info: "Come to opening night when I exhibit the pie fight pictures.",
+  project_id: 9
+)
+Reward.create(
+  level: '100',
+  title: "Gallery opening night VIP",
+  info: "Get early access to the gallery on opening night and other special perks.",
+  project_id: 9
+)
+
+#Project 10
+
+Project.create(
+  title: 'Inventing teleportation',
+  body: "I'm working on inventing teleportation. I'm not sure how to do it, and I need your help."
+  goal: 200000,
+  end_date: "2015-12-25",
+  owner_id: "1",
+  category_id: "5",
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440897333/vbgg0nedn1keupsihn75.jpg"
+)
+Reward.create(
+  level: '2000',
+  title: "Become a sponsor",
+  info: "You won't get anything tangible, but I'll remember your support forever.",
+  project_id: 10
+)
+Reward.create(
+  level: '10000',
+  title: "Teleport something!",
+  info: "I'll teleport one non-animate object of your choice. I don't guarentee it'll come out the same and can't tell you where it'll end up.",
+  project_id: 10
+)
+Reward.create(
+  level: '30000',
+  title: "Teleport yourself",
+  info: "You'll get to be one of the first humans to travel by teleportation! I have no clue where you'll end up, so good luck!",
+  project_id: 10
+)
+
+#Project 11
+
+Project.create(
+  title: 'Track the wumpus!',
+  body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate."
+  goal: 800,
+  end_date: "2015-11-10",
+  owner_id: "1",
+  category_id: "1",
+  image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898183/rncnesd9nnp2cvarsxt4.jpg"
+)
+Reward.create(
+  level: '14',
+  title: "Become a sponsor",
+  info: "I'll list you as a sponsor on my website.",
+  project_id: 12
+)
+Reward.create(
+  level: '70',
+  title: "Copy of my diary",
+  info: "You'll get a copy of the diary I write while tracking down the wumpus.",
+  project_id: 12
+)
+Reward.create(
+  level: '110',
+  title: "Wumpus footprint casts",
+  info: "I'll make a mold of the wumpus's footprints and send you a clay cast made using the mold.",
+  project_id: 12
+)
+Reward.create(
+  level: '225',
+  title: "Selfie with the wumpus",
+  info: "I'll send you a signed selfie with the wumpus.",
+  project_id: 12
+)
+
+
 Rewarding.create(
   user_id: 2,
   reward_id: 3
@@ -294,4 +440,34 @@ Rewarding.create(
 Rewarding.create(
   user_id: 1,
   reward_id: 20
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 20
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 33
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 5
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 16
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 28
+)
+
+Rewarding.create(
+  user_id: 3,
+  reward_id: 39
 )

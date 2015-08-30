@@ -14,7 +14,7 @@ namespace :db do
     puts "Reseeding database"
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE categories")
     ActiveRecord::Base.connection.execute("ALTER SEQUENCE categories_id_seq RESTART WITH 1")
-    ActiveRecord::Base.connection.execute("DELETE FROM users WHERE id > 2")
+    ActiveRecord::Base.connection.execute("DELETE FROM users WHERE id > 3")
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE projects")
     ActiveRecord::Base.connection.execute("ALTER SEQUENCE projects_id_seq RESTART WITH 1")
     ActiveRecord::Base.connection.execute("TRUNCATE TABLE rewards")
