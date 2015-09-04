@@ -1,8 +1,8 @@
 # Enginestarter
 
-[Link to live site][site]
+![site](https://github.com/ralam/Enginestarter/blob/master/app/assets/images/screenshot.jpg)
 
-![](http://res.cloudinary.com/dp32c2sq2/image/upload/v1440175311/digzzaw4hegjbyqdele0.jpg)
+[Link to live site][site]
 
 Best viewed in Chrome.
 
