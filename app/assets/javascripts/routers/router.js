@@ -4,7 +4,8 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.collection = options.projects;
     this.categories = options.categories;
-    this.users = options.users
+    this.users = options.users;
+    this.bind('route', this._pageView);
   },
 
   routes: {
@@ -140,5 +141,10 @@ Enginestarter.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
+  },
+
+  _pageView: function() {
+    var path = Backbone.history.getFragment();
+    ga('send', 'pageview', {page: "/" + path});
   }
 });
