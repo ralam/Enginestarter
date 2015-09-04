@@ -2,6 +2,8 @@
 
 [Link to live site][site]
 
+![](http://res.cloudinary.com/dp32c2sq2/image/upload/v1440175311/digzzaw4hegjbyqdele0.jpg)
+
 Best viewed in Chrome.
 
 [site]: http://www.enginestarter.xyz
