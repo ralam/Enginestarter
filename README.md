@@ -1,7 +1,5 @@
 # Enginestarter
 
-![site](https://github.com/ralam/Enginestarter/blob/master/app/assets/images/screenshot.jpg)
-
 [Link to live site][site]
 
 Best viewed in Chrome.
@@ -9,6 +7,8 @@ Best viewed in Chrome.
 [site]: http://www.enginestarter.xyz
 
 ## Description
+
+![site](https://github.com/ralam/Enginestarter/blob/master/app/assets/images/screenshot.jpg)
 
 Enginestarter is a Kickstarter-inspired crowdfunding site built on Rails and Backbone. To experience the full functionality of the site, log into the guest account using the link in the top right of the navbar.
 
