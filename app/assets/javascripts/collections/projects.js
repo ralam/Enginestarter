@@ -37,7 +37,6 @@ Enginestarter.Collections.Projects = Backbone.Collection.extend({
       }.bind(this));
     };
 
-    console.dir(projects);
     return projects;
   }
 });
