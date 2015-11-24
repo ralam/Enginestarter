@@ -41,7 +41,6 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
       projects.forEach(function(project) {
         this.addProjectPreview(project, '.supported-projects')
       }.bind(this));
-        // this.addProjectPreview(this, '.supported-projects').bind(this));
     }
 
     if (owned_projects.length > 0 && projects[0].attributes != undefined) {
