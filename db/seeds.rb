@@ -61,7 +61,7 @@ Project.create(
   title: 'Better sliced bread',
   body: "Sliced bread was a pretty good invention, but I'm going to figure out how to do it better.",
   goal: 300,
-  end_date: "2015-11-24",
+  end_date: "2016-11-24",
   owner_id: "1",
   category_id: "3",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440440987/kgu97ettmqtuimq0d1kx.jpg"
@@ -386,7 +386,7 @@ Project.create(
   title: 'Starting art classes',
   body: "I'm starting art classes at my local high school, but we need funding for materials.",
   goal: 300,
-  end_date: "2015-11-29",
+  end_date: "2016-11-29",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898183/rncnesd9nnp2cvarsxt4.jpg"
@@ -414,7 +414,7 @@ Project.create(
   title: 'Track the wumpus!',
   body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate.",
   goal: 800,
-  end_date: "2015-11-10",
+  end_date: "2016-11-10",
   owner_id: "1",
   category_id: "1",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898909/xkbfkar8be9aaow5qe7b.jpg"
