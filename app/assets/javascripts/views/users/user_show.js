@@ -19,7 +19,7 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
     var view = new Enginestarter.Views.ProjectPreview({
       model: project
     });
-    this.addSubview('.projects', view);
+    this.addSubview('.supported-projects', view);
   },
 
   renderProjects: function () {
