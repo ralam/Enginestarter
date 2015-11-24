@@ -24,6 +24,21 @@ Enginestarter.Collections.Projects = Backbone.Collection.extend({
     }
 
     return project;
+  },
+
+  getOrFetchByOwner: function (ownerId) {
+    var collection = this;
+    var projects = [];
+    if (this.models.length > 0) {
+      this.models.map(function(model) {
+        if (model.attributes.owner_id == ownerId) {
+          projects.push(model);
+        }
+      }.bind(this));
+    };
+
+    console.dir(projects);
+    return projects;
   }
 });
 
