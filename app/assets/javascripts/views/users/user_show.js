@@ -15,11 +15,11 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  addProjectPreview: function (project) {
+  addProjectPreview: function (project, divClass) {
     var view = new Enginestarter.Views.ProjectPreview({
       model: project
     });
-    this.addSubview('.supported-projects', view);
+    this.addSubview(divClass, view);
   },
 
   renderProjects: function () {
@@ -38,7 +38,16 @@ Enginestarter.Views.UserShow = Backbone.CompositeView.extend({
     }
 
     if (projects.length > 0 && projects[0].attributes != undefined ) {
-      projects.forEach(this.addProjectPreview.bind(this));
+      projects.forEach(function(project) {
+        this.addProjectPreview(project, '.supported-projects')
+      }.bind(this));
+        // this.addProjectPreview(this, '.supported-projects').bind(this));
+    }
+
+    if (owned_projects.length > 0 && projects[0].attributes != undefined) {
+      owned_projects.forEach(function(project) {
+        this.addProjectPreview(project, '.owned-projects')
+      }.bind(this));
     }
   }
 })
