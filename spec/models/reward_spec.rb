@@ -5,6 +5,10 @@ RSpec.describe Reward, type: :model do
 
   it "has a valid factory" do
     expect(reward).to be_valid
+    expect(reward.level).to be_an(Integer)
+    expect(reward.title).to be_a(String)
+    expect(reward.info).to be_a(String)
+    expect(reward.project_id).to be_an(Integer)
   end
 
   it "must have a reward level" do

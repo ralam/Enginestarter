@@ -5,6 +5,13 @@ RSpec.describe Project, type: :model do
 
   it "has a valid factory" do
     expect(project).to be_valid
+    expect(project.title).to be_a(String)
+    expect(project.body).to be_a(String)
+    expect(project.owner_id).to be_an(Integer)
+    expect(project.goal).to be_an(Integer)
+    expect(project.end_date).to be_a(Date)
+    expect(project.category_id).to be_an(Integer)
+    expect(project.image_url).to be_a(String)
   end
 
   it "must have a title" do
