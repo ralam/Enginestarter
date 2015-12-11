@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  validates :title, :body, :goal, :end_date, :owner_id, :image_url, presence: true
+  validates :title, :body, :goal, :end_date, :owner_id, :image_url, :category_id, presence: true
   validates :goal, numericality: { greater_than_or_equal_to: 1 }
 
   belongs_to(

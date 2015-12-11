@@ -10,5 +10,4 @@ FactoryGirl.define do
     f.category_id {Faker::Number.between(from = 1, to = 5)}
     f.image_url {Faker::Internet.url}
   end
-
 end
