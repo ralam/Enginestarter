@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) do
-    FactoryGirl.build(:user)
+    create(:user)
   end
 
   it "has a valid factory" do
