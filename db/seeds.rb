@@ -24,7 +24,7 @@ Project.create(
   title: 'Finding the perfect pineapple',
   body: "I'm going to look for the perfect pineapple in Hawaii.",
   goal: 600,
-  end_date: "2015-12-24",
+  end_date: "2016-12-24",
   owner_id: "1",
   category_id: "3",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1439598282/wdqkaxyn7p3imklsdyb0.jpg"
@@ -103,7 +103,7 @@ Project.create(
   title: 'Journey through the swamp',
   body: "I'm going to try and cross a dangerous swamp -- fund me so I can survive.",
   goal: 1500,
-  end_date: "2015-12-30",
+  end_date: "2016-12-30",
   owner_id: "1",
   category_id: "1",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440957089/b6bgerwztcai5jtgcmcf.jpg"
@@ -241,7 +241,7 @@ Project.create(
   title: 'Bridges of the world',
   body: "I'm putting together a book of pictures of bridges around the world. Great for your coffee table!",
   goal: 550,
-  end_date: "2015-12-02",
+  end_date: "2016-12-02",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440450453/lvfrmhv6lyhtiy5zllws.jpg"
@@ -320,7 +320,7 @@ Project.create(
   title: 'Interactive pie fight exhibit',
   body: "I'm going to host a live pie fight and take pictures for my art gallery.",
   goal: 675,
-  end_date: "2015-12-11",
+  end_date: "2016-12-11",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440899110/pjiclphiueoznccku4lo.jpg"
@@ -356,7 +356,7 @@ Project.create(
   title: 'Inventing teleportation',
   body: "I'm working on inventing teleportation. I'm not sure how to do it, and I need your help.",
   goal: 200000,
-  end_date: "2015-12-25",
+  end_date: "2016-12-25",
   owner_id: "1",
   category_id: "5",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440897333/vbgg0nedn1keupsihn75.jpg"
