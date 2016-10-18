@@ -24,7 +24,7 @@ Project.create(
   title: 'Finding the perfect pineapple',
   body: "I'm going to look for the perfect pineapple in Hawaii.",
   goal: 600,
-  end_date: "2016-12-24",
+  end_date: "2017-12-24",
   owner_id: "1",
   category_id: "3",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1439598282/wdqkaxyn7p3imklsdyb0.jpg"
@@ -61,7 +61,7 @@ Project.create(
   title: 'Better sliced bread',
   body: "Sliced bread was a pretty good invention, but I'm going to figure out how to do it better.",
   goal: 300,
-  end_date: "2016-11-24",
+  end_date: "2017-11-24",
   owner_id: "1",
   category_id: "3",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440440987/kgu97ettmqtuimq0d1kx.jpg"
@@ -103,7 +103,7 @@ Project.create(
   title: 'Journey through the swamp',
   body: "I'm going to try and cross a dangerous swamp -- fund me so I can survive.",
   goal: 1500,
-  end_date: "2016-12-30",
+  end_date: "2017-12-30",
   owner_id: "1",
   category_id: "1",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440957089/b6bgerwztcai5jtgcmcf.jpg"
@@ -139,7 +139,7 @@ Project.create(
   title: 'Adventure across the desert',
   body: "I'm going on an adventure in the desert. Please support me so I can buy water.",
   goal: 200,
-  end_date: "2016-02-04",
+  end_date: "2017-02-04",
   owner_id: "1",
   category_id: "1",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1439594992/h1p1xaukufypl3bovv4m.jpg"
@@ -175,7 +175,7 @@ Project.create(
   title: 'Building a hovercraft',
   body: "I want to build an awesome hovercraft, but I need your help.",
   goal: 30000,
-  end_date: "2016-11-15",
+  end_date: "2017-11-15",
   owner_id: "2",
   category_id: "5",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440446854/hclolgilojtbyyd8nal5.jpg"
@@ -211,7 +211,7 @@ Project.create(
   title: 'Start a string quartet',
   body: "We're starting a string quartet and need your help (fourth member not pictured).",
   goal: 400,
-  end_date: "2016-11-07",
+  end_date: "2017-11-07",
   owner_id: "1",
   category_id: "4",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440447324/ttqbpyxpyuhkebwkyu1l.jpg"
@@ -241,7 +241,7 @@ Project.create(
   title: 'Bridges of the world',
   body: "I'm putting together a book of pictures of bridges around the world. Great for your coffee table!",
   goal: 550,
-  end_date: "2016-12-02",
+  end_date: "2017-12-02",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440450453/lvfrmhv6lyhtiy5zllws.jpg"
@@ -277,7 +277,7 @@ Project.create(
   title: 'Flying car',
   body: "Why don't we have flying cars yet? I'm going to build one!",
   goal: 15000,
-  end_date: "2016-1-03",
+  end_date: "2017-1-03",
   owner_id: "1",
   category_id: "5",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440871938/dmldtqaysl3zgxe0xcvx.jpg"
@@ -320,7 +320,7 @@ Project.create(
   title: 'Interactive pie fight exhibit',
   body: "I'm going to host a live pie fight and take pictures for my art gallery.",
   goal: 675,
-  end_date: "2016-12-11",
+  end_date: "2017-12-11",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440899110/pjiclphiueoznccku4lo.jpg"
@@ -356,7 +356,7 @@ Project.create(
   title: 'Inventing teleportation',
   body: "I'm working on inventing teleportation. I'm not sure how to do it, and I need your help.",
   goal: 200000,
-  end_date: "2016-12-25",
+  end_date: "2017-12-25",
   owner_id: "1",
   category_id: "5",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440897333/vbgg0nedn1keupsihn75.jpg"
@@ -386,7 +386,7 @@ Project.create(
   title: 'Starting art classes',
   body: "I'm starting art classes at my local high school, but we need funding for materials.",
   goal: 300,
-  end_date: "2016-11-29",
+  end_date: "2017-11-29",
   owner_id: "1",
   category_id: "2",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898183/rncnesd9nnp2cvarsxt4.jpg"
@@ -414,7 +414,7 @@ Project.create(
   title: 'Track the wumpus!',
   body: "I'm going to track down the legendary wumpus! It'll be dangerous, but it needs to be done. I have no clue what it looks like, so this picture may not be accurate.",
   goal: 800,
-  end_date: "2016-11-10",
+  end_date: "2017-11-10",
   owner_id: "1",
   category_id: "1",
   image_url: "http://res.cloudinary.com/dp32c2sq2/image/upload/v1440898909/xkbfkar8be9aaow5qe7b.jpg"
