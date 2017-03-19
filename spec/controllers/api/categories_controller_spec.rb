@@ -4,11 +4,10 @@ RSpec.describe Api::CategoriesController, type: :controller do
   render_views
 
   let(:json) { JSON.parse(response.body) }
-
+  let(:first_category) {create(:category)}
+  let(:cow_category) {create(:category)}
 
   describe "GET index" do
-    let(:first_category) {create(:category)}
-    let(:cow_category) {create(:category)}
     before {get :index, format: :json}
 
     it "has a 200 status code" do
