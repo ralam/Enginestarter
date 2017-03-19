@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :email, uniqueness: true
 
-  has_many :projects
+  has_many :projects, foreign_key: :owner_id
   has_many :rewardings
   has_many :rewards, through: :rewardings
   has_many :supported_projects, through: :rewards, source: :project
