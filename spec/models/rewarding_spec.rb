@@ -17,11 +17,11 @@ RSpec.describe Rewarding, type: :model do
     should belong_to(:reward)
   end
 
-  it "must have a user_id" do
+  it "must have a user id" do
     expect(build(:rewarding, user_id:nil)).to_not be_valid
   end
 
-  it "must have a reward_id" do
+  it "must have a reward id" do
     expect(build(:rewarding, reward_id:nil)).to_not be_valid
   end
 end

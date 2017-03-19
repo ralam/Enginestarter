@@ -24,6 +24,26 @@ RSpec.describe User, type: :model do
   it 'has supported projects through rewards' do
     should have_many(:supported_projects).through(:rewards)
   end
+  
+  it 'requires an email' do
+    should validate_presence_of(:email)
+  end
+
+  it 'requires a password digest' do
+    should validate_presence_of(:password_digest)
+  end
+
+  it 'requires a session token' do
+    should validate_presence_of(:session_token)
+  end
+
+  it 'has a min length of 6 for the password' do
+    should validate_length_of(:password).is_at_least(6)
+  end
+
+  it 'validates that the email is unique' do
+    should validate_uniqueness_of(:email)
+  end
 
   describe '#reset_token!' do
     it 'resets the session token' do

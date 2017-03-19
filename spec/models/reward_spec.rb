@@ -26,4 +26,20 @@ RSpec.describe Reward, type: :model do
   it "must belong to a project" do
     expect(build(:reward, project_id: nil)).to_not be_valid
   end
+
+  it 'belongs to a project' do
+    should belong_to(:project)
+  end
+
+  it 'has rewardings' do
+    should have_many(:rewardings)
+  end
+
+  it 'has users through rewardings' do
+    should have_many(:users).through(:rewardings)
+  end
+
+  it 'must have a level greater than 1' do
+    should validate_numericality_of(:level).is_greater_than_or_equal_to(1)
+  end
 end

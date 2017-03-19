@@ -40,4 +40,20 @@ RSpec.describe Project, type: :model do
   it "must have an image" do
     expect(build(:project, image_url: nil)).to_not be_valid
   end
+
+  it 'has rewards' do
+    should have_many(:rewards)
+  end
+
+  it 'has rewardings trough rewards' do
+    should have_many(:rewardings).through(:rewards)
+  end
+
+  it 'belongs to a category' do
+    should belong_to(:category)
+  end
+
+  it 'belongs to a user' do
+    should belong_to(:user)
+  end
 end
