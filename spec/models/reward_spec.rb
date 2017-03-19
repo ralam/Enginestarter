@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Reward, type: :model do
-  let(:reward) {create(:reward)}
+  let(:reward) {build(:reward)}
 
   it "has a valid factory" do
     expect(reward).to be_valid
