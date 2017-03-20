@@ -6,9 +6,9 @@ class Api::CategoriesController < ApplicationController
 
   def show
     begin
-    @category = Category.find(params[:id])
+      @category = Category.find(params[:id])
       if @category
-        render :show
+        render 'api/categories/show.json'
       end
     rescue
       render json: ["That category doesn't exist."], status: 404

@@ -57,9 +57,13 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+end
+
 group :test do
   gem 'faker'
   gem 'capybara'
-  gem 'guard-rspec'
   gem 'launchy'
 end

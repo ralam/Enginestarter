@@ -46,4 +46,8 @@ RSpec.configure do |config|
     fill_in 'Password', with: user.password
     click_button("Log In", exact: true)
   end
+
+  config.after :all do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
+  end
 end
