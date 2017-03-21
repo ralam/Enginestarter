@@ -37,7 +37,7 @@ class Api::ProjectsController < ApplicationController
           save_rewards(rewards)
         end
       end
-      render 'api/projects/show.json'
+      render :show
     rescue
       render_errors(errors)
     end
