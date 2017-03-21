@@ -30,14 +30,14 @@ class Api::ProjectsController < ApplicationController
     end
 
     begin
-    errors = []
+      errors = []
       Project.transaction do
         @project.update!(params.permit(:title, :body, :goal, :end_date, :owner_id, :category_id, :image_url))
         if rewards
           save_rewards(rewards)
         end
       end
-      render :show
+      render 'api/projects/show.json'
     rescue
       render_errors(errors)
     end
@@ -45,9 +45,9 @@ class Api::ProjectsController < ApplicationController
 
   def show
     begin
-    @project = Project.find(params[:id])
+      @project = Project.find(params[:id])
       if @project
-        render :show
+        render 'api/projects/show.json'
       end
     rescue
       render json: ["That project doesn't exist."], status: 404

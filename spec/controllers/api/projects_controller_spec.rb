@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Api::CategoriesController, type: :controller do
-  render_views
+RSpec.describe Api::ProjectsController, type: :controller do
+  let (:dummy_project) {build(:project)}
+  let (:category) {build(:category)}
 
   describe "GET #index" do
     before {get :index, format: :json}
@@ -16,15 +17,23 @@ RSpec.describe Api::CategoriesController, type: :controller do
   end
 
   describe 'GET #show' do
-    it 'renders category as JSON' do
-      Category.create!({title: 'Art'})
+    it 'renders the project as JSON' do
+      Project.create!({
+        title: dummy_project.title,
+        body: dummy_project.body,
+        goal: dummy_project.goal,
+        end_date: dummy_project.end_date,
+        owner_id: dummy_project.owner_id,
+        category_id: dummy_project.category_id,
+        image_url: dummy_project.image_url
+      })
       get :show, id: 1
 
       expect(response.status).to eq(200)
       expect(response.content_type).to eq "application/json"
     end
 
-    context 'if the category does not exist' do
+    context 'if the project does not exist' do
       it 'has a 404 status code' do
         get :show, id: -1
         expect(response.status).to eq(404)
