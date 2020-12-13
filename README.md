@@ -1,10 +1,6 @@
 # Enginestarter
 
-[Link to live site][site]
-
 Best viewed in Chrome.
-
-[site]: https://enginestarter.herokuapp.com/#index
 
 ## Description
 
